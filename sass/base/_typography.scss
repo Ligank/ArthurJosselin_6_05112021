@@ -1,0 +1,43 @@
+body {
+    font-family: 'DM Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: currentColor;
+  }
+
+h1 {
+    color: $secondaire_rouge;
+    font-size: 36px;
+}
+
+h2 {
+    color: $primaire_orange;
+    font-size: 36px;
+}
+
+li {
+    color: $secondaire_rouge;
+    font-size: 13px;
+}
+
+.ville {
+    color: $secondaire_rouge;
+    font-size: 13px;
+}
+
+.description_phrase {
+    color: black;
+    font-size: 10px;
+}
+
+.description_prix {
+    color: $secondaire_gris;
+    font-size: 9px;
+}
+
+.lien_haut_page {
+    color: black;
+    font-size: 18px;
+}
