@@ -1,13 +1,23 @@
-
-li {
+.tag {
     border: 1px solid $secondaire_gris;
     font-weight: bold;
     border-radius: 30px;
     padding: 3px 5px 3px 5px;
     margin: 10px 5px 0 0;
 }
-li:hover {
+
+.tag:hover {
     background-color: $primaire_rouge;
     color: white;
     border: 1px solid $primaire_rouge;
+}
+
+.lien_haut_page {
+    position: fixed;
+    left: 45%;
+    top: 6px;
+    width: 155px;
+    background-color: $secondaire_orange;
+    padding: 6px 6px 8px 6px;
+    border-radius: 10px;
 }
