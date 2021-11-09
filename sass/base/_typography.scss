@@ -7,15 +7,24 @@ a {
     color: currentColor;
   }
 
-h1 {
+.Titre_index {
     color: $secondaire_rouge;
-    font-size: 36px;
+    font-size: 1.8vw;
+    @media screen and (max-width: 815px) {
+        font-size: 14px;
+    }
+}
+
+.nom_photographe {
+    color: $secondaire_orange;
+    font-size: 64px;
 }
 
 h2 {
     color: $primaire_orange;
     font-size: 36px;
     font-weight: 400;
+    text-align: center;
 }
 
 li {

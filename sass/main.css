@@ -19,15 +19,27 @@ a {
   color: currentColor;
 }
 
-h1 {
+.Titre_index {
   color: #901C1C;
-  font-size: 36px;
+  font-size: 1.8vw;
+}
+
+@media screen and (max-width: 815px) {
+  .Titre_index {
+    font-size: 14px;
+  }
+}
+
+.nom_photographe {
+  color: #DB8876;
+  font-size: 64px;
 }
 
 h2 {
   color: #D3573C;
   font-size: 36px;
   font-weight: 400;
+  text-align: center;
 }
 
 li {
@@ -71,7 +83,8 @@ li {
 
 .lien_haut_page {
   position: fixed;
-  left: 45%;
+  left: 50%;
+  margin-left: -77.2px;
   top: 6px;
   width: 155px;
   background-color: #DB8876;
@@ -83,32 +96,78 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 70%;
   height: 157px;
 }
 
-header .logo_img {
+header .logo_lien {
   height: 30%;
-  margin-top: 43px;
+  margin: 43px 0 0 100px;
+}
+
+header .logo_lien .logo_img {
+  height: 100%;
 }
 
 header ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  vertical-align: middle;
   list-style: none;
   margin-top: 43px;
 }
 
-h1 {
+@media screen and (max-width: 1249px) {
+  header {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  header nav {
+    margin: auto;
+  }
+  header nav ul {
+    margin-top: 0px;
+  }
+}
+
+@media screen and (max-width: 815px) {
+  header {
+    width: 100%;
+  }
+  header .logo_lien {
+    margin: 43px 0 0 5%;
+  }
+}
+
+.Titre_index {
   position: relative;
   left: 72%;
-  bottom: 115px;
+  bottom: 110px;
+  width: 30%;
+  max-width: 330px;
+  min-width: 130px;
+}
+
+@media screen and (max-width: 815px) {
+  .Titre_index {
+    width: 20%;
+    left: 62%;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .Titre_index {
+    width: 15%;
+    left: 66%;
+  }
 }
 
 .profils {
@@ -117,9 +176,8 @@ h1 {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .profils .photographe_profil {
@@ -136,27 +194,6 @@ h1 {
       -ms-flex-pack: left;
           justify-content: left;
   margin: 40px 0 20px 0;
-}
-
-.profils .photographe_profil .profil_image {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.profils .photographe_profil .profil_image .profil_img {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .profils .photographe_profil .profil_description {
@@ -184,5 +221,29 @@ h1 {
 
 .profils .photographe_profil .profil_tag ul li {
   margin: 10px 0 10px 0;
+}
+
+.profil_image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 75%;
+}
+
+.profil_image .profil_img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 /*# sourceMappingURL=main.css.map */

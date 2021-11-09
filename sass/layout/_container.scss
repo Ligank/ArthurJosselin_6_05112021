@@ -1,13 +1,24 @@
-h1 {
+.Titre_index {
     position: relative;
     left: 72%;
-    bottom: 115px;
+    bottom: 110px;
+    width: 30%;
+    max-width: 330px;
+    min-width: 130px;
+    @media screen and (max-width: 815px) {
+        width: 20%;
+        left: 62%;
+    }
+    @media screen and (max-width: 374px) {
+        width: 15%;
+        left: 66%;
+    }
 }
 
 .profils {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     .photographe_profil {
         width: 33%;
         min-width: 375px;
@@ -15,17 +26,6 @@ h1 {
         flex-direction: column;
         justify-content: left;
         margin: 40px 0 20px 0;
-        .profil_image {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-                .profil_img {
-                    width: 250px;
-                    height: 250px;
-                    border-radius: 50%;
-                    object-fit: cover;
-                }
-        }
         .profil_description {
             display: flex;
             flex-direction: column;
@@ -44,5 +44,6 @@ h1 {
             
     }
 }
+
 
 

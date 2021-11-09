@@ -1,17 +1,43 @@
 header {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 70%;
     height: 157px;
-        .logo_img {
+        .logo_lien {
             height: 30%;
-            margin-top: 43px;
+            margin: 43px 0 0 100px;
+            .logo_img {
+                height: 100%;
+            }
         }
         ul {
             display: flex;
+            justify-content: center;
             flex-wrap: wrap;
-            vertical-align: middle;
             list-style: none;
             margin-top: 43px;
         }
+}
+
+@media screen and (max-width: 1249px)  {
+    header {
+        flex-wrap: wrap;
+        nav {
+            margin: auto;
+            ul {
+                margin-top: 0px;
+            }
+        }
+        
+    }
+}
+
+@media screen and (max-width: 815px) {
+    header {
+        width: 100%;
+        .logo_lien {
+            margin: 43px 0 0 5%;
+        }
+
+    }
 }

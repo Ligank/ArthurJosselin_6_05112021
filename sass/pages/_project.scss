@@ -1,0 +1,13 @@
+.profil_image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    width: 75%;
+        .profil_img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+}
