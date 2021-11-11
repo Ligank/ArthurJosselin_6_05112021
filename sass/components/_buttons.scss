@@ -22,3 +22,18 @@
     padding: 6px 6px 8px 6px;
     border-radius: 10px;
 }
+
+.contact {
+  background: $primaire_rouge;
+  border-radius: 7px;
+  font-size: 20px;
+  padding: 21px 11px 22px 11px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  border: 0;
+  &:hover {
+      background: $secondaire_orange;
+      color: black;
+  }
+}

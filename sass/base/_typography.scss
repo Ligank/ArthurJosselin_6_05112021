@@ -18,6 +18,9 @@ a {
 .nom_photographe {
     color: $secondaire_orange;
     font-size: 64px;
+    @media screen and (max-width: 690px) {
+        font-size: 36px;
+    }
 }
 
 h2 {
@@ -37,6 +40,21 @@ li {
     font-size: 13px;
 }
 
+#ville_profil {
+    font-size: 24px;
+    @media screen and (max-width: 690px) {
+        font-size: 13px;
+    }
+}
+
+.phrase_profil {
+    font-size: 18px;
+    color: $secondaire_gris;
+    @media screen and (max-width: 690px) {
+        font-size: 13px;
+    }
+}
+
 .description_phrase {
     color: black;
     font-size: 10px;
@@ -50,4 +68,17 @@ li {
 .lien_haut_page {
     color: black;
     font-size: 18px;
+}
+
+.titre_filtres {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.gallerie__titre_coeur {
+    color: $primaire_rouge;
+    font-size: 24px;
+    @media screen and (max-width: 430px) {
+        font-size: 14px;
+    }
 }

@@ -17,12 +17,15 @@
         <a href="index.html" class="logo_lien">
             <img src="public/img/Logo.png" alt="logo" class="logo_img">
         </a>
+    </header>   
+
+    <main id="main">
         <div class="photographe_page">
             <div class="page__nom_et_tag">
                 <h1 class="nom_photographe">Mimi Keel</h1>
-                <p>London, UK</p>
-                <p>Voir le beau dans le quotidien</p>
-                <ul>
+                <p class="ville" id="ville_profil">London, UK</p>
+                <p class="phrase_profil">Voir le beau dans le quotidien</p>
+                <ul class="tag_photographe_profil">
                     <li><a href="" class="tag">#Portrait</a></li>
                     <li><a href="" class="tag">#Events</a></li>
                     <li><a href="" class="tag">#Travel</a></li>
@@ -30,22 +33,27 @@
                 </ul>
             </div>
             <div class="page__contact">
-                <button>Contactez-moi</button>
+                <button class="contact">Contactez-moi</button>
             </div>
             <div class="page__photo">
                 <a href="" class="profil_image">
                     <figure>
-                        <img src="public/img/Photographers ID Photos/MimiKeel.jpg" alt="Image photographe" class="profil_img">
+                        <img src="public/img/Photographers ID Photos/MimiKeel.jpg" alt="Image photographe" class="profil_img" id="profil_image_page">
                     </figure>
                 </a>
             </div>
         </div>
-    </header>   
 
-    <main id="#main">
         <div class="filtres">
-            <p>Trier par</p>
-            <button class="menu_deroulant">Popularité</button>
+            <label class="titre_filtres">Trier par</label>
+            <button class="popularite_btn filtre_bouton"><p class="filtre_nom">Popularité</p><i class="fas fa-chevron-down"></i></button>
+            <button class="date_btn filtre_bouton"><p class="filtre_nom">Date</p><i class="fas fa-chevron-down"></i></button>
+            <button class="titre_btn filtre_bouton"><p class="filtre_nom">Titre</p><i class="fas fa-chevron-down"></i></button>
+            <div class="filtre_deroule">
+                <a href=""><p class="filtre_nom">Popularité<i class="fas fa-chevron-up"></i></p></a>
+                <a href=""><p class="filtre_nom filtre_date">Date</p></a>
+                <a href=""><p class="filtre_nom">Titre</p></a>
+            </div>
         </div>
         
         <div class="gallerie">
@@ -56,8 +64,98 @@
                     </figure>
                 </a>
                 <div class="gallerie__titre_coeur">
-                    <p>Arc-en-ciel</p>
-                    <p>12<i class="fas fa-heart"></i></p>
+                    <div class="titre_photo">
+                        <p>Arc-en-ciel</p>
+                    </div>
+                    <div class="prix_coeur">
+                        <p>70€</p>
+                        <p>12<i class="fas fa-heart"></i></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallerie__photo">
+                <a href="" class="photo__image">
+                    <figure>
+                        <img src="public/img/Mimi/Travel_Lonesome.jpg" alt="Image photographe" class="gallerie_img">
+                    </figure>
+                </a>
+                <div class="gallerie__titre_coeur">
+                    <div class="titre_photo">
+                        <p>Solitude</p>
+                    </div>
+                    <div class="prix_coeur">
+                        <p>70€</p>
+                        <p>12<i class="fas fa-heart"></i></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallerie__photo">
+                <a href="" class="photo__image">
+                    <figure>
+                        <img src="public/img/Mimi/Event_SeasideWedding.jpg" alt="Image photographe" class="gallerie_img">
+                    </figure>
+                </a>
+                <div class="gallerie__titre_coeur">
+                    <div class="titre_photo">
+                        <p>Mariage à la mer</p>
+                    </div>
+                    <div class="prix_coeur">
+                        <p>70€</p>
+                        <p>12<i class="fas fa-heart"></i></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallerie__photo">
+                <a href="" class="photo__image">
+                    <figure>
+                        <img src="public/img/Mimi/Portrait_Background.jpg" alt="Image photographe" class="gallerie_img">
+                    </figure>
+                </a>
+                <div class="gallerie__titre_coeur">
+                    <div class="titre_photo">
+                        <p>Solitude</p>
+                    </div>
+                    <div class="prix_coeur">
+                        <p>70€</p>
+                        <p>12<i class="fas fa-heart"></i></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallerie__photo">
+                <a href="" class="photo__image">
+                    <figure>
+                        <img src="public/img/Mimi/Event_PintoWedding.jpg" alt="Image photographe" class="gallerie_img">
+                    </figure>
+                </a>
+                <div class="gallerie__titre_coeur">
+                    <div class="titre_photo">
+                        <p>Solitude</p>
+                    </div>
+                    <div class="prix_coeur">
+                        <p>70€</p>
+                        <p>12<i class="fas fa-heart"></i></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallerie__photo">
+                <a href="" class="photo__image">
+                    <figure>
+                        <img src="public/img/Mimi/Portrait_Wednesday.jpg" alt="Image photographe" class="gallerie_img">
+                    </figure>
+                </a>
+                <div class="gallerie__titre_coeur">
+                    <div class="titre_photo">
+                        <p>Solitude</p>
+                    </div>
+                    <div class="prix_coeur">
+                        <p>70€</p>
+                        <p>12<i class="fas fa-heart"></i></p>
+                    </div>
                 </div>
             </div>
         </div>
