@@ -52,6 +52,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 100px;
     .gallerie__photo {
         display: flex;
         flex-direction: column;
@@ -89,3 +90,30 @@
         }
     }
 }
+
+.lien_bas_page {
+    display: flex;
+    justify-content: space-around;
+    width: 376px;
+    background: $secondaire_orange;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 15px 0 15px 0;
+    position: fixed;
+    right: 50px;
+    bottom: 0px;
+    @media screen and (max-width: 500px) {
+        display: none;
+    }
+}
+
+.page__contact_portable {
+    position: fixed;
+    left: 50%;
+    margin-left: -77.2px;
+    bottom: 20px;
+    @media screen and (min-width: 500px) {
+        display: none;
+    }
+}
+
