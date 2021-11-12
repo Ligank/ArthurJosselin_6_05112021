@@ -30,7 +30,7 @@ function pageAcceuil() {
 
     //creation nom photographe
     let nom_photographe = document.createElement("h2");
-    nom_photographe.innerHTML = donnee_photographe[0].name;
+    nom_photographe.innerHTML = "donnee_photographe[0].name";
     profil_image.appendChild(nom_photographe);
 
     //creation description photographe
