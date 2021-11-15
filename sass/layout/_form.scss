@@ -1,0 +1,84 @@
+.fond {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(57, 70, 190, 0.4);
+  .formulaire {
+    margin: 50px auto;
+    width: 669px;
+    background: $secondaire_orange;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+    padding-top: 10px;
+    animation-name: formulaire_ouvert;
+    animation-duration: var(--modal-duration);
+    @media screen and (max-width: 685px) {
+        width: 90%;
+    }
+        .croix {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            width: 32px;
+            height: 32px;
+            opacity: 1;
+            cursor: pointer;
+            transform: scale(0.7);
+        }
+        .croix:before,
+        .croix:after {
+            position: absolute;
+            left: 15px;
+            content: " ";
+            height: 33px;
+            width: 3px;
+            background-color: #fff;
+        }
+        .croix:before {
+            transform: rotate(45deg);
+        }
+        .croix:after {
+            transform: rotate(-45deg);
+        }
+        .formulaire_input {
+            margin: 20px 35px 0 35px;
+            #myForm {
+               margin-bottom: 20px;
+               .formulaire_case {
+                margin: 0 0 20px 0;
+                border: 0.8px solid #ccc;
+                width: 98%;
+                height: 50px;
+                outline: none;
+                font-size: 30px;
+                border-radius: 5px;
+              }
+            #message {
+                height: 170px;
+            }
+            }
+        }
+}
+}
+
+
+@keyframes formulaire_ouvert {
+    from {
+      opacity: 0;
+      transform: translateY(-150px);
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+
+  
+

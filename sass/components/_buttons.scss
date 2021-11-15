@@ -37,3 +37,11 @@
       color: black;
   }
 }
+
+.bouton_envoyer {
+    padding: 23px 50px 23px 50px;
+    &:hover {
+        background: $primaire_rouge;
+        color: #312E2E;
+    }
+}

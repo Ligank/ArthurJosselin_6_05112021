@@ -114,6 +114,30 @@ li {
   font-size: 24px;
 }
 
+.nom_contact {
+  color: black;
+  font-size: 64px;
+}
+
+@media screen and (max-width: 685px) {
+  .nom_contact {
+    font-size: 10vw;
+  }
+}
+
+label {
+  font-size: 36px;
+  color: #312E2E;
+  font-weight: normal;
+  display: inline-block;
+}
+
+#erreur_prenom, #erreur_nom, #errorMail {
+  font-size: 17px;
+  text-align: start;
+  color: red;
+}
+
 .tag {
   border: 1px solid #525252;
   font-weight: bold;
@@ -153,6 +177,15 @@ li {
 .contact:hover {
   background: #DB8876;
   color: black;
+}
+
+.bouton_envoyer {
+  padding: 23px 50px 23px 50px;
+}
+
+.bouton_envoyer:hover {
+  background: #901C1C;
+  color: #312E2E;
 }
 
 .filtres {
@@ -543,6 +576,115 @@ header ul {
 
 .profils .photographe_profil .profil_tag ul li {
   margin: 10px 0 10px 0;
+}
+
+.fond {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(57, 70, 190, 0.4);
+}
+
+.fond .formulaire {
+  margin: 50px auto;
+  width: 669px;
+  background: #DB8876;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  padding-top: 10px;
+  -webkit-animation-name: formulaire_ouvert;
+          animation-name: formulaire_ouvert;
+  -webkit-animation-duration: var(--modal-duration);
+          animation-duration: var(--modal-duration);
+}
+
+@media screen and (max-width: 685px) {
+  .fond .formulaire {
+    width: 90%;
+  }
+}
+
+.fond .formulaire .croix {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 32px;
+  height: 32px;
+  opacity: 1;
+  cursor: pointer;
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
+}
+
+.fond .formulaire .croix:before,
+.fond .formulaire .croix:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 33px;
+  width: 3px;
+  background-color: #fff;
+}
+
+.fond .formulaire .croix:before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.fond .formulaire .croix:after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.fond .formulaire .formulaire_input {
+  margin: 20px 35px 0 35px;
+}
+
+.fond .formulaire .formulaire_input #myForm {
+  margin-bottom: 20px;
+}
+
+.fond .formulaire .formulaire_input #myForm .formulaire_case {
+  margin: 0 0 20px 0;
+  border: 0.8px solid #ccc;
+  width: 98%;
+  height: 50px;
+  outline: none;
+  font-size: 30px;
+  border-radius: 5px;
+}
+
+.fond .formulaire .formulaire_input #myForm #message {
+  height: 170px;
+}
+
+@-webkit-keyframes formulaire_ouvert {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-150px);
+            transform: translateY(-150px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes formulaire_ouvert {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-150px);
+            transform: translateY(-150px);
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .profil_image {

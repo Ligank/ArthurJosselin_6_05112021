@@ -33,7 +33,7 @@
                 </ul>
             </div>
             <div class="page__contact">
-                <button class="contact">Contactez-moi</button>
+                <button class="contact contact_btn">Contactez-moi</button>
             </div>
             <div class="page__photo">
                 <a href="" class="profil_image">
@@ -159,6 +159,64 @@
                 </div>
             </div>
         </div>
+        <div class="fond">
+            <div class="formulaire">
+              <span class="croix" id="croix"></span>
+              <div class="formulaire_input">
+                  <h1 class="nom_contact">Contactez-moi<br>Mimi Keel</h1>
+                <form id="myForm" name="contact_formulaire" action="javascript:closeValidate()" method="post">
+                  <div class="formData">
+                    <label>Prénom</label><br>
+                    <input
+                      class="formulaire_case"
+                      type="text"
+                      id="prenom"
+                      name="prenom"
+                      minlength="2"
+                    /><br>
+                    <span id="erreur_prenom"></span>
+                  </div>
+                  <div
+                    class="formData">
+                    <label>Nom</label><br>
+                    <input
+                      class="formulaire_case"
+                      type="text"
+                      id="nom"
+                      name="nom"
+                    /><br>
+                    <span id="erreur_nom"></span>
+                  </div>
+                  <div
+                    class="formData">
+                    <label>E-mail</label><br>
+                    <input
+                      class="formulaire_case"
+                      type="text"
+                      id="email"
+                      name="email"
+                    /><br>
+                    <span id="errorMail"></span>
+                  </div>
+                  <div
+                    class="formData">
+                    <label>Votre message</label><br>
+                    <textarea 
+                    class="formulaire_case"
+                      type="text"
+                      id="message"
+                      name="message">                      
+                    </textarea>                  
+                  </div>
+                  <input
+                    class="bouton_envoyer contact"
+                    type="submit"
+                    value="Envoyer"
+                  />
+                </form>
+              </div>
+            </div>
+        </div>
     </main>
 
     <div class="lien_bas_page">
@@ -168,6 +226,9 @@
     <div class="page__contact_portable">
         <button class="contact contact_portable">Contactez-moi</button>
     </div>
-    <script src="modal.js"></script>
+
+    <script type="text/javascript" src="photographers.json"></script>
+    <script type="text/javascript" src="modal.js"></script>
+
 </body>
 </html>

@@ -86,3 +86,25 @@ li {
 .lien_bas_page {
     font-size: 24px;
 }
+
+.nom_contact {
+    color: black;
+    font-size: 64px;
+    @media screen and (max-width: 685px) {
+        font-size: 10vw;
+    }
+}
+
+label {
+    font-size: 36px;
+    color: #312E2E;
+    font-weight: normal;
+    display: inline-block;
+    
+  }
+
+#erreur_prenom, #erreur_nom, #errorMail {
+    font-size: 17px;
+    text-align: start;
+    color: red;
+}
