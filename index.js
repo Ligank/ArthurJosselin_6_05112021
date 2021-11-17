@@ -8,7 +8,7 @@ function pageIndex() {
         .then((response) => response.json())
         .then(data => {
             let dataphotographers = data.photographers;
-            dataphotographers.forEach(file => {
+            dataphotographers.forEach(photographers => {
 
             //creation profil
             let photographe_profil = document.createElement("div");
@@ -24,14 +24,14 @@ function pageIndex() {
             let figure = document.createElement("figure");
             profil_image.appendChild(figure);
             let profil_img = document.createElement("img");
-            profil_img.src = file.portrait;
+            profil_img.src = photographers.portrait;
             profil_img.alt = "Image photographe";
             profil_img.classList.add("profil_img");
             figure.appendChild(profil_img);
 
             //creation nom photographe
             let nom_photographe = document.createElement("h2");
-            nom_photographe.innerHTML = file.name;
+            nom_photographe.innerHTML = photographers.name;
             profil_image.appendChild(nom_photographe);
 
             //creation description photographe
@@ -39,15 +39,15 @@ function pageIndex() {
             profil_description.classList.add("profil_description");
             photographe_profil.appendChild(profil_description);
             let ville = document.createElement("p");
-            ville.innerHTML = file.city;
+            ville.innerHTML = photographers.city;
             ville.classList.add("ville");
             profil_description.appendChild(ville);
             let description_phrase = document.createElement("p");
-            description_phrase.innerHTML = file.tagline;
+            description_phrase.innerHTML = photographers.tagline;
             description_phrase.classList.add("description_phrase");
             profil_description.appendChild(description_phrase);
             let description_prix = document.createElement("p");
-            description_prix.innerHTML = file.price;
+            description_prix.innerHTML = photographers.price;
             description_prix.classList.add("description_prix");
             profil_description.appendChild(description_prix);
 
@@ -62,7 +62,7 @@ function pageIndex() {
             liste_tag.appendChild(tag_li);
             let tag = document.createElement("a");
             tag.href = "";
-            tag.innerHTML = file.tags;
+            tag.innerHTML = photographers.tags;
             tag.classList.add("tag");
             tag_li.appendChild(tag);
 
