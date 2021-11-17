@@ -25,12 +25,13 @@
         }
         .fa-chevron-down  {
             float: right;
+            margin-top: 3px;
         }
     }
 }
 
 .filtre_deroule {
-    width: 170px;
+    width: 148px;
     height: 170px;
     background: $primaire_rouge;
     border-radius: 7px;
@@ -45,7 +46,7 @@
     flex-direction: column;
     justify-content: space-around;
     .fa-chevron-up {
-        margin-left: 52px;
+        margin-left: 30px;
     }
     .filtre_date {
         border-top: 1px solid white;

@@ -9,7 +9,7 @@
   overflow: auto;
   background-color: rgba(57, 70, 190, 0.4);
   .formulaire {
-    margin: 50px auto;
+    margin: 20px auto;
     width: 669px;
     background: $secondaire_orange;
     border-radius: 10px;
@@ -52,9 +52,11 @@
             #myForm {
                margin-bottom: 20px;
                .formulaire_case {
-                margin: 0 0 20px 0;
-                border: 0.8px solid #ccc;
+                margin: 0 0 10px 0;
+                padding: 8px;
+                border: 2px solid white;
                 width: 98%;
+                max-width: 588px;
                 height: 50px;
                 outline: none;
                 font-size: 30px;
