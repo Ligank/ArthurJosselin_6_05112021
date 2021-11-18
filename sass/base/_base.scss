@@ -4,9 +4,54 @@
     margin: 0;
     padding: 0;
 }
-
-
 body {
     max-width: 1440px;
     margin: auto;
 }
+
+/*.Chargement {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 120px;
+    height: 120px;
+    margin: 0 0 0 -55px;
+    border: 15px solid $primaire_rouge;
+    border-radius: 50%;
+    border-top: 15px solid $primaire_orange;
+    animation: Chargement 2s linear;
+    animation-fill-mode: both;
+    animation-duration: 3s;
+  }
+  
+  @keyframes Chargement {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  .Accueil {
+    opacity: 0;
+    animation-fill-mode: both;
+    position: relative;
+    animation-name: Bloc_page;
+    animation-duration: 5s;
+  }
+
+  @keyframes Bloc_page {
+    20% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 0.2;
+    }
+    100% {
+      bottom: 0;
+      opacity: 1;
+    }
+  }*/

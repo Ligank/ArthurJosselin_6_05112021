@@ -86,7 +86,7 @@ myForm.addEventListener('submit', function(submit) {
   });
 
 
-//Filtres
+//Filtres---------------------------------------------------------------------
 const myFilterPopular = document.querySelector(".popularite_btn");
 const myFilterLarge = document.querySelector(".filtre_deroule");
 const myFilterDate = document.querySelector(".date_btn");

@@ -10,6 +10,52 @@ body {
   margin: auto;
 }
 
+/*.Chargement {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 120px;
+    height: 120px;
+    margin: 0 0 0 -55px;
+    border: 15px solid $primaire_rouge;
+    border-radius: 50%;
+    border-top: 15px solid $primaire_orange;
+    animation: Chargement 2s linear;
+    animation-fill-mode: both;
+    animation-duration: 3s;
+  }
+  
+  @keyframes Chargement {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  .Accueil {
+    opacity: 0;
+    animation-fill-mode: both;
+    position: relative;
+    animation-name: Bloc_page;
+    animation-duration: 5s;
+  }
+
+  @keyframes Bloc_page {
+    20% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 0.2;
+    }
+    100% {
+      bottom: 0;
+      opacity: 1;
+    }
+  }*/
 body {
   font-family: 'DM Sans', sans-serif;
 }
@@ -158,6 +204,7 @@ label {
 
 .lien_haut_page {
   position: fixed;
+  display: none;
   left: 50%;
   margin-left: -77.2px;
   top: 6px;
@@ -165,6 +212,32 @@ label {
   background-color: #DB8876;
   padding: 6px 6px 8px 6px;
   border-radius: 10px;
+  -webkit-animation-name: lien;
+          animation-name: lien;
+  -webkit-animation-duration: 300ms;
+          animation-duration: 300ms;
+}
+
+@-webkit-keyframes lien {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes lien {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .contact {
@@ -283,7 +356,8 @@ header {
 
 header .logo_lien {
   height: 30%;
-  margin: 43px 0 0 100px;
+  margin: 0 0 0 100px;
+  padding-top: 43px;
 }
 
 header .logo_lien .logo_img {

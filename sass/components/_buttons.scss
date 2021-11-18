@@ -14,6 +14,7 @@
 
 .lien_haut_page {
     position: fixed;
+    display: none;
     left: 50%;
     margin-left: -77.2px;
     top: 6px;
@@ -21,7 +22,19 @@
     background-color: $secondaire_orange;
     padding: 6px 6px 8px 6px;
     border-radius: 10px;
+    animation-name: lien;
+    animation-duration: 300ms;
 }
+
+@keyframes lien {
+    from {
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+    to {
+      opacity: 1;
+    }
+  }
 
 .contact {
   background: $primaire_rouge;
