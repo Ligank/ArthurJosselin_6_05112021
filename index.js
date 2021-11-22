@@ -29,7 +29,7 @@ function pageIndex() {
 
             //creation lien image----------------------------------------
             let profil_image = document.createElement("a");
-            profil_image.href = "index.html";
+            profil_image.href = "photographer-page.html?id=" + element.id;
             profil_image.classList.add("profil_image");
             photographe_profil.appendChild(profil_image);
 
