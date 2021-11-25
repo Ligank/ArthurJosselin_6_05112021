@@ -114,7 +114,7 @@ function pagePhotographe() {
             tag_photographe_profil.appendChild(tag_li_profil);
             let tag = document.createElement("a");
             tag.href = "index.html";
-            tag.innerHTML = "# " + element[0].tags;
+            tag.innerHTML = "# " + element;
             tag.classList.add("tag");
             tag_li_profil.appendChild(tag);
             })  

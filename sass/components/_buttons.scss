@@ -1,12 +1,19 @@
-.tag {
+.lien_tag {
     border: 1px solid $secondaire_gris;
     font-weight: bold;
     border-radius: 30px;
     padding: 3px 5px 3px 5px;
     margin: 10px 5px 0 0;
+    cursor: pointer;
 }
 
-.tag:hover {
+.lien_tag:hover {
+    background-color: $primaire_rouge;
+    color: white;
+    border: 1px solid $primaire_rouge;
+}
+
+.actif {
     background-color: $primaire_rouge;
     color: white;
     border: 1px solid $primaire_rouge;

@@ -72,21 +72,38 @@ function pageIndex() {
             profil_tag.appendChild(liste_tag);
 
             //creation tags--------------------------------------------
-            element.tags.forEach(element => {
+            element.tags.forEach(filtre => {
             let tag_li = document.createElement("li");
             tag_li.classList.add("tag_li");
             liste_tag.appendChild(tag_li);
             let tag = document.createElement("a");
             tag.href = "";
-            tag.innerHTML = "# " + element.tags;
+            tag.innerHTML = "# " + filtre;
             tag.classList.add("tag");
+            tag.setAttribute("data-filter", filtre)
             tag_li.appendChild(tag);
+            photographe_profil.classList.add(filtre);
             })
             //Insertion------------------------------------------------
             document.querySelector(".profils").appendChild(photographe_profil);
-            });
+            }); 
         })
         .catch(function() {
         console.log("erreur");
         });
-}
+};
+
+
+//Filtres
+  document.querySelector('.groupe_tag').addEventListener('click', function(event) {
+    let tag = event.target.classList.value;
+
+    if (-1 === tag.indexOf('actif')) {
+        event.target.classList.add('actif')
+    } else {
+        event.target.classList.remove('actif')
+    }
+  })
+
+
+
