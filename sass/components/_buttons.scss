@@ -1,19 +1,22 @@
-.lien_tag {
-    border: 1px solid $secondaire_gris;
-    font-weight: bold;
-    border-radius: 30px;
-    padding: 3px 5px 3px 5px;
-    margin: 10px 5px 0 0;
-    cursor: pointer;
-}
-
-.lien_tag:hover {
+.tag {
+  margin: 10px 10px 0 0;
+  .actif {
     background-color: $primaire_rouge;
     color: white;
     border: 1px solid $primaire_rouge;
 }
+}
 
-.actif {
+.lien_tag, .tag_profil {
+    border: 1px solid $secondaire_gris;
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 3px 5px 3px 5px;
+    
+    cursor: pointer;
+}
+
+.lien_tag:hover, .tag_profil:hover {
     background-color: $primaire_rouge;
     color: white;
     border: 1px solid $primaire_rouge;

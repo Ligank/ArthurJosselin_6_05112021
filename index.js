@@ -1,3 +1,5 @@
+import Filtre from "/js/filtre.js";
+
 window.onload = function() {
     pageIndex();
 };
@@ -78,8 +80,8 @@ function pageIndex() {
             liste_tag.appendChild(tag_li);
             let tag = document.createElement("a");
             tag.href = "";
-            tag.innerHTML = "# " + filtre;
-            tag.classList.add("tag");
+            tag.innerHTML = "#" + filtre;
+            tag.classList.add("tag","tag_profil");
             tag.setAttribute("data-filter", filtre)
             tag_li.appendChild(tag);
             photographe_profil.classList.add(filtre);
@@ -87,23 +89,10 @@ function pageIndex() {
             //Insertion------------------------------------------------
             document.querySelector(".profils").appendChild(photographe_profil);
             }); 
+            new Filtre().filtre();
+
         })
         .catch(function() {
         console.log("erreur");
         });
 };
-
-
-//Filtres
-  document.querySelector('.groupe_tag').addEventListener('click', function(event) {
-    let tag = event.target.classList.value;
-
-    if (-1 === tag.indexOf('actif')) {
-        event.target.classList.add('actif')
-    } else {
-        event.target.classList.remove('actif')
-    }
-  })
-
-
-

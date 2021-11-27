@@ -188,22 +188,25 @@ label {
   color: red;
 }
 
-.lien_tag {
-  border: 1px solid #525252;
-  font-weight: bold;
-  border-radius: 30px;
-  padding: 3px 5px 3px 5px;
-  margin: 10px 5px 0 0;
-  cursor: pointer;
+.tag {
+  margin: 10px 10px 0 0;
 }
 
-.lien_tag:hover {
+.tag .actif {
   background-color: #901C1C;
   color: white;
   border: 1px solid #901C1C;
 }
 
-.actif {
+.lien_tag, .tag_profil {
+  border: 1px solid #525252;
+  font-weight: bold;
+  border-radius: 30px;
+  padding: 3px 5px 3px 5px;
+  cursor: pointer;
+}
+
+.lien_tag:hover, .tag_profil:hover {
   background-color: #901C1C;
   color: white;
   border: 1px solid #901C1C;
@@ -797,5 +800,8 @@ header ul {
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 10px #575555;
+          box-shadow: 0 0 10px #575555;
 }
 /*# sourceMappingURL=main.css.map */
