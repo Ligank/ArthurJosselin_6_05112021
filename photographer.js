@@ -1,5 +1,12 @@
+import Gallerie from "/js/gallerie.js";
+
 window.onload = function() {
   pagePhotographe();
+};
+
+//formulaire----------------------------------------------------------------
+function closeValidate() {
+  location.reload();
 };
 
 
@@ -115,15 +122,25 @@ function pagePhotographe() {
             let tag = document.createElement("a");
             tag.href = "index.html";
             tag.innerHTML = "# " + element;
-            tag.classList.add("tag");
+            tag.classList.add("tag", "tag_profil");
             tag_li_profil.appendChild(tag);
-            })  
+            });
+            
+          //creation formulaire
+            let nom_contact = document.createElement("h1");
+            nom_contact.classList.add("nom_contact");
+            nom_contact.innerText = "Contactez-moi " + photographers[0].name;
+            document.querySelector(".nom_formulaire").appendChild(nom_contact);
+
+            //gallerie
+          let dataMedia = data.media;
+          dataMedia.forEach(element => {
+            if (id == element.photographerId) {
+              new Gallerie();
+            }
+          });
       })
       .then(data => {
-        //formulaire----------------------------------------------------------------
-        function closeValidate() {
-          location.reload();
-        };
         //ouverture
 
         const formulaire = document.querySelector(".fond");
@@ -207,57 +224,6 @@ function pagePhotographe() {
             }
         });
       })
-      /*.then(data => {
-        let dataphotographersMedia = data.photographers;
-        const id = window.location.search.split('id=')[1];
-        const media = !id ? dataphotographersMedia : dataphotographersMedia.filter(media => media.id == id);
-        media.forEach(media => {
-           //Images
-            let gallerie__photo = document.createElement("div");
-            gallerie__photo.classList.add("gallerie__photo");
-            document.querySelector(".gallerie").appendChild(gallerie__photo);
-
-            let photo__image = document.createElement("a");
-            photo__image.href = "photographer-page.html?id=" + media[0].id;
-            photo__image.classList.add("profil_image");
-            gallerie__photo.appendChild(photo__image);
-
-            let figureGallerie = document.createElement("figure");
-            photo__image.appendChild(figureGallerie);
-            let gallerie_img = document.createElement("img");
-            gallerie_img.src = media[0].image;
-            gallerie_img.alt = media[0].alt;
-            gallerie_img.classList.add("gallerie_img");
-            figureGallerie.appendChild(gallerie_img);
-
-            let gallerie__titre_coeur = document.createElement("div");
-            gallerie__titre_coeur.classList.add("gallerie__titre_coeur");
-            document.querySelector(".gallerie__photo").appendChild(gallerie__titre_coeur);
-
-            let titre_photo = document.createElement("div");
-            titre_photo.classList.add("titre_photo");
-            gallerie__titre_coeur.appendChild(titre_photo);
-
-            let titre_photoP = document.createElement("p");
-            titre_photoP.classList.add("titre_photo");
-            titre_photoP.innerHTML = media[0].title;
-            titre_photo.appendChild(titre_photoP);
-
-            let prix_coeur = document.createElement("div");
-            prix_coeur.classList.add("titre_photo");
-            gallerie__titre_coeur.appendChild(prix_coeur);
-
-            let prix = document.createElement("p");
-            prix.classList.add("titre_photo");
-            prix.innerHTML = media[0].price + "€";
-            prix.appendChild(prix);
-
-            let coeur = document.createElement("p");
-            coeur.classList.add("titre_photo");
-            coeur.innerHTML = media[0].likes + "heart";
-            prix_coeur.appendChild(coeur);
-        })
-      })*/
       .catch(function() {
       console.log("erreur");
       });

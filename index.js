@@ -89,6 +89,7 @@ function pageIndex() {
             //Insertion------------------------------------------------
             document.querySelector(".profils").appendChild(photographe_profil);
             }); 
+            //Lancement du filtre
             new Filtre().filtre();
 
         })
