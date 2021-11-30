@@ -131,14 +131,6 @@ function pagePhotographe() {
             nom_contact.classList.add("nom_contact");
             nom_contact.innerText = "Contactez-moi " + photographers[0].name;
             document.querySelector(".nom_formulaire").appendChild(nom_contact);
-
-            //gallerie
-          let dataMedia = data.media;
-          dataMedia.forEach(element => {
-            if (id == element.photographerId) {
-              new Gallerie();
-            }
-          });
       })
       .then(data => {
         //ouverture
