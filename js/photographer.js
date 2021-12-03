@@ -1,4 +1,7 @@
-import Gallerie from "/js/gallerie.js";
+'use strict';
+
+import Image from "./factory/image.js";
+//import Gallerie from "./factory/gallerie.js";
 
 window.onload = function() {
   pagePhotographe();
@@ -127,10 +130,21 @@ function pagePhotographe() {
             });
             
           //creation formulaire
-            let nom_contact = document.createElement("h1");
-            nom_contact.classList.add("nom_contact");
-            nom_contact.innerText = "Contactez-moi " + photographers[0].name;
-            document.querySelector(".nom_formulaire").appendChild(nom_contact);
+          let nom_contact = document.createElement("h1");
+          nom_contact.classList.add("nom_contact");
+          nom_contact.innerText = "Contactez-moi " + photographers[0].name;
+          document.querySelector(".nom_formulaire").appendChild(nom_contact);
+
+          let dataphotographersMedia = data.media;
+          const photographerId = window.location.search.split('id=')[1];
+          dataphotographersMedia.forEach(element => {
+            if (photographerId == element.photographerId) {
+              
+              new Image().creationMedia(element);
+                    
+            }
+          })
+
       })
       .then(data => {
         //ouverture

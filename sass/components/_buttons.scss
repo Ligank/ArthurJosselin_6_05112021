@@ -68,3 +68,11 @@
         color: #312E2E;
     }
 }
+
+.coeur_vide {
+  cursor: pointer;
+}
+.coeur_plein::before {
+  display: none;
+  cursor: pointer;
+}

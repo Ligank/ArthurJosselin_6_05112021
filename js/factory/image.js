@@ -1,0 +1,40 @@
+'use strict';
+
+export default class Image {
+    creationMedia(element) {
+        
+        let gallerie__photo = document.createElement("div");
+        gallerie__photo.classList.add("gallerie__photo");
+        document.querySelector(".gallerie").appendChild(gallerie__photo);
+        let photo__image = document.createElement("a");
+        photo__image.classList.add("photo__image");
+        gallerie__photo.appendChild(photo__image);
+        let figure = document.createElement("figure");
+        photo__image.appendChild(figure);
+        let gallerie_img = document.createElement("img");
+        gallerie_img.classList.add("gallerie_img");
+        gallerie_img.src = element.image;
+        gallerie_img.alt = element.alt;
+        figure.appendChild(gallerie_img);
+        let gallerie__titre_coeur = document.createElement("div");
+        gallerie__titre_coeur.classList.add("gallerie__titre_coeur");
+        gallerie__photo.appendChild(gallerie__titre_coeur);
+        let titre_photo = document.createElement("div");
+        titre_photo.classList.add("titre_photo")
+        gallerie__titre_coeur.appendChild(titre_photo);
+        let titre = document.createElement("p")
+        titre.innerHTML = element.title;
+        titre_photo.appendChild(titre);
+        let prix_coeur = document.createElement("div");
+        prix_coeur.classList.add("prix_coeur");
+        gallerie__titre_coeur.appendChild(prix_coeur);
+        let prix = document.createElement("p");
+        prix.innerHTML = element.price + " €";
+        prix_coeur.appendChild(prix);
+        let likes = document.createElement("p");
+        let coeur_vide = `<i class="far fa-heart coeur_vide" role="button"></i>`;
+        let coeur_plein = `<i class="fas fa-heart coeur_plein" role="button"></i>`;
+        likes.innerHTML = element.likes + " " + coeur_vide + coeur_plein;
+        prix_coeur.appendChild(likes);
+    }
+}

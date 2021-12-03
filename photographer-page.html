@@ -36,9 +36,9 @@
             </div>
         </div>
         
-        <div class="gallerie">
-           
-        </div>
+        <section class="gallerie">
+          
+        </section>
         <div class="fond">
             <div class="formulaire">
               <span class="croix" id="croix"></span>
@@ -97,6 +97,16 @@
               </div>
             </div>
         </div>
+
+        <aside class="lightbox" aria-hidden="true">
+            <article class="lightbox_corp" role="dialog">
+              <span class="fas fa-times close-lightbox-icon" role="button" title="Fermer"></span>
+              <span class="fas fa-chevron-left fleche_gauche_lightbox" role="button" title="Image précédente"></span>
+              <span class="fas fa-chevron-right fleche_droite_lightbox" role="button" title="Image suivante"></span>
+              <div class="lightbox_media"></div>
+              <div class="lightbox_nom"></div>
+            </article>
+        </aside>
     </main>
 
     <div class="lien_bas_page">
@@ -107,8 +117,9 @@
         <button class="contact contact_portable">Contactez-moi</button>
     </div>
 
+
     <script type="module" src="js/factory/gallerie.js"></script>
-    <script type="module" src="photographer.js"></script>
+    <script type="module" src="js/photographer.js"></script>
 
 </body>
 </html>

@@ -1,3 +1,5 @@
+'use strict';
+
 import Filtre from "/js/filtre.js";
 
 window.onload = function() {
@@ -90,7 +92,7 @@ function pageIndex() {
             document.querySelector(".profils").appendChild(photographe_profil);
             }); 
             //Lancement du filtre
-            new Filtre().filtre();
+            new Filtre().filtreTag();
 
         })
         .catch(function() {

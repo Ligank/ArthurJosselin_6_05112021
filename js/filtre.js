@@ -1,9 +1,11 @@
+'use strict';
+
 //Filtres
 export default class Filtre {
 
 
     //Choix du filtre-------------------------------------------------------------------
-    filtre() {
+    filtreTag() {
         let profils = document.querySelectorAll(".photographe_profil");
     
         document.querySelector(".groupe_tag").addEventListener("click", event => {
