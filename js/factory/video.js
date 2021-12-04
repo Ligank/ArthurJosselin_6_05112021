@@ -8,13 +8,16 @@ export default class Video {
         let photo__image = document.createElement("a");
         photo__image.classList.add("photo__image");
         gallerie__photo.appendChild(photo__image);
-        let play = `<i class="far fa-play-circle" role="button"></i>`;
-        photo__image.appendChild(play);
         let figure = document.createElement("figure");
+        figure.classList.add("figureVideo");
         photo__image.appendChild(figure);
+        let play = document.createElement("i");
+        play.classList.add("far", "fa-play-circle", "play");
+        play.setAttribute("role","button");
+        figure.appendChild(play);
         let gallerie_img = document.createElement("img");
         gallerie_img.classList.add("gallerie_img");
-        gallerie_img.src = element.image;
+        gallerie_img.src = element.thumbnail;
         gallerie_img.alt = element.alt;
         figure.appendChild(gallerie_img);
         let gallerie__titre_coeur = document.createElement("div");
@@ -34,7 +37,7 @@ export default class Video {
         prix_coeur.appendChild(prix);
         let likes = document.createElement("p");
         let coeur_vide = `<i class="far fa-heart coeur_vide" role="button"></i>`;
-        let coeur_plein = `<i class="fas fa-heart coeur_plein" role="button"></i>`;
+        let coeur_plein = `<i class="fas fa-heart coeur_plein" role="button" style="display: none;"></i>`;
         likes.innerHTML = element.likes + " " + coeur_vide + coeur_plein;
         prix_coeur.appendChild(likes);
     }

@@ -5,11 +5,11 @@ import Video from "./video.js";
 
 export default class MediaFactory {
     mediaComparateur(element) {
-        let factory = null;
+        
         if (element.hasOwnProperty("image")) {
-            factory = new Image();
+            new Image().creationMedia(element);
         } else if (element.hasOwnProperty("video")) {
-            factory = new Video();
+            new Video().creationMedia(element);
         }
     }
 }

@@ -73,6 +73,28 @@
   cursor: pointer;
 }
 .coeur_plein::before {
-  display: none;
   cursor: pointer;
 }
+
+.figureVideo {
+  position: relative;
+  .play {
+    z-index: 1;
+    position: absolute;
+    color: $primaire_rouge;
+    font-size: 80px;
+    left: 50%;
+    top: 50%;
+    margin: -40px 0 0 -40px;
+    cursor: pointer;
+  }
+}
+
+.play:hover {
+  transform: scale(1.10);
+}
+
+.gallerie_img {
+  cursor: pointer;
+}
+

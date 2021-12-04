@@ -26,9 +26,9 @@
 
         <div class="filtres">
             <label class="titre_filtres">Trier par</label>
-            <button class="popularite_btn filtre_bouton"><p class="filtre_nom">Popularité</p><i class="fas fa-chevron-down"></i></button>
-            <button class="date_btn filtre_bouton"><p class="filtre_nom">Date</p><i class="fas fa-chevron-down"></i></button>
-            <button class="titre_btn filtre_bouton"><p class="filtre_nom">Titre</p><i class="fas fa-chevron-down"></i></button>
+            <button class="popularite_btn filtre_bouton"><span class="filtre_nom">Popularité</span><i class="fas fa-chevron-down"></i></button>
+            <button class="date_btn filtre_bouton"><span class="filtre_nom">Date</span><i class="fas fa-chevron-down"></i></button>
+            <button class="titre_btn filtre_bouton"><span class="filtre_nom">Titre</span><i class="fas fa-chevron-down"></i></button>
             <div class="filtre_deroule">
                 <p class="filtre_nom filtre_populaire">Popularité<i class="fas fa-chevron-up"></i></p>
                 <p class="filtre_nom filtre_date">Date</p>
@@ -83,7 +83,6 @@
                     <label>Votre message</label><br>
                     <textarea 
                     class="formulaire_case"
-                      type="text"
                       id="message"
                       name="message">                      
                     </textarea>                  
@@ -99,7 +98,7 @@
         </div>
 
         <aside class="lightbox" aria-hidden="true">
-            <article class="lightbox_corp" role="dialog">
+            <article class="lightbox_corp">
               <span class="fas fa-times close-lightbox-icon" role="button" title="Fermer"></span>
               <span class="fas fa-chevron-left fleche_gauche_lightbox" role="button" title="Image précédente"></span>
               <span class="fas fa-chevron-right fleche_droite_lightbox" role="button" title="Image suivante"></span>
@@ -110,8 +109,6 @@
     </main>
 
     <div class="lien_bas_page">
-        <p>297 081 <i class="fas fa-heart"></i></p>
-        <p>300€ / jour</p>
     </div> 
     <div class="page__contact_portable">
         <button class="contact contact_portable">Contactez-moi</button>

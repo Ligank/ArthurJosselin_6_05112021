@@ -33,7 +33,7 @@ export default class Image {
         prix_coeur.appendChild(prix);
         let likes = document.createElement("p");
         let coeur_vide = `<i class="far fa-heart coeur_vide" role="button"></i>`;
-        let coeur_plein = `<i class="fas fa-heart coeur_plein" role="button"></i>`;
+        let coeur_plein = `<i class="fas fa-heart coeur_plein" role="button" style="display: none;"></i>`;
         likes.innerHTML = element.likes + " " + coeur_vide + coeur_plein;
         prix_coeur.appendChild(likes);
     }

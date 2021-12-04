@@ -188,6 +188,10 @@ label {
   color: red;
 }
 
+p, h1, h2, h3 {
+  cursor: default;
+}
+
 .tag {
   margin: 10px 10px 0 0;
 }
@@ -280,7 +284,30 @@ label {
 }
 
 .coeur_plein::before {
-  display: none;
+  cursor: pointer;
+}
+
+.figureVideo {
+  position: relative;
+}
+
+.figureVideo .play {
+  z-index: 1;
+  position: absolute;
+  color: #901C1C;
+  font-size: 80px;
+  left: 50%;
+  top: 50%;
+  margin: -40px 0 0 -40px;
+  cursor: pointer;
+}
+
+.play:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.gallerie_img {
   cursor: pointer;
 }
 
@@ -562,7 +589,7 @@ header ul {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 35%;
+  width: 40%;
 }
 
 .lien_bas_page {

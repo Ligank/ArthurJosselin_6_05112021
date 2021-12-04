@@ -1,6 +1,6 @@
 'use strict';
 
-import Image from "./factory/image.js";
+import Media from "./factory/media.js";
 //import Gallerie from "./factory/gallerie.js";
 
 window.onload = function() {
@@ -11,6 +11,8 @@ window.onload = function() {
 function closeValidate() {
   location.reload();
 };
+
+let likesTotal = []
 
 
 //Filtres---------------------------------------------------------------------
@@ -140,11 +142,40 @@ function pagePhotographe() {
           dataphotographersMedia.forEach(element => {
             if (photographerId == element.photographerId) {
               
-              new Image().creationMedia(element);
+              new Media().mediaComparateur(element);
+              likesTotal.push(element.likes)
                     
             }
           })
 
+          //addition likes
+          let sum = 0;
+          for (let i = 0; i < likesTotal.length; i++) {
+              sum += likesTotal[i];
+          }
+          console.log(sum);
+
+          let coeurVide = document.querySelector(".coeur_vide");
+          let coeurPlein = document.querySelector(".coeur_plein");
+
+
+          coeurVide.addEventListener('click', function() {
+          coeurVide.style.display = "none";
+          coeurPlein.style.display = "initial";
+          sum = sum + 1
+          likes.innerHTML = sum + " " + coeur;
+          })
+
+          //affichage des likes
+          let likes = document.createElement("p");
+          likes.classList.add("likes");
+          document.querySelector(".lien_bas_page").appendChild(likes)
+          let coeur = `<i class="fas fa-heart"></i>`;
+          likes.innerHTML = sum + " " + coeur;
+          let prix = document.createElement("p");
+          prix.classList.add("prix");
+          prix.innerHTML = photographers[0].price + "€/jour"
+          document.querySelector(".lien_bas_page").appendChild(prix)
       })
       .then(data => {
         //ouverture
@@ -228,7 +259,7 @@ function pagePhotographe() {
                   myError.innerHTML = "";
                   email.style.border = "2px solid green";
             }
-        });
+        });       
       })
       .catch(function() {
       console.log("erreur");
