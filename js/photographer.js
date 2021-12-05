@@ -13,6 +13,7 @@ function closeValidate() {
 };
 
 let likesTotal = []
+let sumLikes = 0;
 
 
 //Filtres---------------------------------------------------------------------
@@ -148,22 +149,31 @@ function pagePhotographe() {
             }
           })
 
-          //addition likes
-          let sum = 0;
+          //addition likes totaux      
           for (let i = 0; i < likesTotal.length; i++) {
-              sum += likesTotal[i];
+            sumLikes += likesTotal[i];
           }
-          console.log(sum);
 
-          let coeurVide = document.querySelector(".coeur_vide");
-          let coeurPlein = document.querySelector(".coeur_plein");
+          //addition likes photos
+          document.querySelectorAll(".coeur_vide").forEach(item => {
+            item.addEventListener('click', event => {
+              item.style.display = "none";
+              item.nextElementSibling.style.display = "initial";
+              sumLikes = sumLikes + 1
+              likes.innerHTML = sumLikes + " " + coeur;
+              item.previousElementSibling.textContent = parseInt(item.previousElementSibling.innerText,10) + 1;
+            })
+          })
 
-
-          coeurVide.addEventListener('click', function() {
-          coeurVide.style.display = "none";
-          coeurPlein.style.display = "initial";
-          sum = sum + 1
-          likes.innerHTML = sum + " " + coeur;
+          //soustraction likes photos
+          document.querySelectorAll(".coeur_plein").forEach(item => {
+            item.addEventListener('click', event => {
+              item.style.display = "none";
+              item.previousElementSibling.style.display = "initial";
+              sumLikes = sumLikes - 1
+              likes.innerHTML = sumLikes + " " + coeur;
+              item.previousElementSibling.previousElementSibling.textContent = parseInt(item.previousElementSibling.previousElementSibling.innerText,10) - 1;
+            })
           })
 
           //affichage des likes
@@ -171,7 +181,7 @@ function pagePhotographe() {
           likes.classList.add("likes");
           document.querySelector(".lien_bas_page").appendChild(likes)
           let coeur = `<i class="fas fa-heart"></i>`;
-          likes.innerHTML = sum + " " + coeur;
+          likes.innerHTML = sumLikes + " " + coeur;
           let prix = document.createElement("p");
           prix.classList.add("prix");
           prix.innerHTML = photographers[0].price + "€/jour"

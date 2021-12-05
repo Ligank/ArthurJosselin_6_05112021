@@ -35,10 +35,11 @@ export default class Video {
         let prix = document.createElement("p");
         prix.innerHTML = element.price + " €";
         prix_coeur.appendChild(prix);
-        let likes = document.createElement("p");
+        let likes = document.createElement("div");
+        let spanLikes = `<span>${element.likes}</span>`;
         let coeur_vide = `<i class="far fa-heart coeur_vide" role="button"></i>`;
         let coeur_plein = `<i class="fas fa-heart coeur_plein" role="button" style="display: none;"></i>`;
-        likes.innerHTML = element.likes + " " + coeur_vide + coeur_plein;
+        likes.innerHTML = spanLikes + " " + coeur_vide + coeur_plein;
         prix_coeur.appendChild(likes);
     }
 }
