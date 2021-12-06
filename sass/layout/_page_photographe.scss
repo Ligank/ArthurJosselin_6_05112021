@@ -58,6 +58,8 @@
         flex-direction: column;
         width: 400px;
         margin: 30px 40px 0 40px;
+        animation: sort 1400ms;
+        animation-fill-mode: both;
         @media screen and (max-width: 430px) {
             width: 90vw;
         }
@@ -114,6 +116,20 @@
     bottom: 20px;
     @media screen and (min-width: 500px) {
         display: none;
+    }
+}
+
+@keyframes sort {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    75% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 

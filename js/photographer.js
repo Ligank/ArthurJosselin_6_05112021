@@ -1,7 +1,7 @@
 'use strict';
 
 import Media from "./factory/media.js";
-//import Gallerie from "./factory/gallerie.js";
+import lightBox from "./factory/lightBox.js";
 
 window.onload = function() {
   pagePhotographe();
@@ -11,6 +11,7 @@ window.onload = function() {
 function closeValidate() {
   location.reload();
 };
+
 
 let likesTotal = []
 let sumLikes = 0;
@@ -24,6 +25,7 @@ const myFilterTitle = document.querySelector(".titre_btn");
 const myFilterLargePopular = document.querySelector(".filtre_populaire");
 const myFilterLargeDate = document.querySelector(".filtre_date");
 const myFilterLargeTitle = document.querySelector(".filtre_titre");
+
 
 myFilterPopular.addEventListener('click', function() {
     myFilterPopular.style.display = "none";
@@ -43,16 +45,19 @@ myFilterTitle.addEventListener('click', function() {
 myFilterLargePopular.addEventListener('click', function() {
     myFilterLarge.style.display = "none";
     myFilterPopular.style.display = "initial";
+    sortPopular();
 });
 
 myFilterLargeDate.addEventListener('click', function() {
     myFilterLarge.style.display = "none";
     myFilterDate.style.display = "initial";
+    sortDate();
 });
 
 myFilterLargeTitle.addEventListener('click', function() {
     myFilterLarge.style.display = "none";
     myFilterTitle.style.display = "initial";
+    sortTitle();
 });
 
 
@@ -145,6 +150,7 @@ function pagePhotographe() {
               
               new Media().mediaComparateur(element);
               likesTotal.push(element.likes)
+              new lightBox().ouverture();
                     
             }
           })
@@ -275,3 +281,60 @@ function pagePhotographe() {
       console.log("erreur");
       });
 }
+
+
+//Tri des photos----------------------------------------------------------------------------------------------
+//tri populaire
+function sortPopular() {
+  let classnamePopular = document.getElementsByClassName('gallerie__photo');
+  let divsPopular = [];
+  for (let i = 0; i < classnamePopular.length; ++i) {
+    divsPopular.push(classnamePopular[i]);
+  }
+  divsPopular.sort(function(a, b) {
+      return b.dataset.likes-a.dataset.likes;
+  });
+  
+  let parentPopular = document.getElementsByClassName("gallerie")[0];
+
+  divsPopular.forEach(function(el) {
+    parentPopular.appendChild(el);
+  });
+}
+//tri par date
+function sortDate() {
+  let classnameDate = document.getElementsByClassName('gallerie__photo');
+  let divsDate = [];
+  for (let i = 0; i < classnameDate.length; ++i) {
+    divsDate.push(classnameDate[i]);
+  }
+  divsDate.sort(function(a, b) {
+     return a.dataset.date.localeCompare(b.dataset.date);
+  });
+  
+  let parentDate = document.getElementsByClassName("gallerie")[0];
+
+  divsDate.forEach(function(el) {
+    parentDate.appendChild(el);
+  });
+}
+
+//tri par titre
+function sortTitle() {
+  let classnameTitle = document.getElementsByClassName('gallerie__photo');
+  let divsTitle = [];
+  for (let i = 0; i < classnameTitle.length; ++i) {
+    divsTitle.push(classnameTitle[i]);
+  }
+  divsTitle.sort(function(a, b) {
+     return a.dataset.title.localeCompare(b.dataset.title);
+  });
+  
+  let parentTitle = document.getElementsByClassName("gallerie")[0];
+
+  divsTitle.forEach(function(el) {
+    parentTitle.appendChild(el);
+  });
+}
+
+

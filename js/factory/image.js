@@ -1,11 +1,15 @@
 'use strict';
 
+
 export default class Image {
     creationMedia(element) {
         
         let gallerie__photo = document.createElement("div");
         gallerie__photo.classList.add("gallerie__photo");
         document.querySelector(".gallerie").appendChild(gallerie__photo);
+        gallerie__photo.setAttribute("data-title", element.title)
+        gallerie__photo.setAttribute("data-likes", element.likes)
+        gallerie__photo.setAttribute("data-date", element.date)
         let photo__image = document.createElement("a");
         photo__image.classList.add("photo__image");
         gallerie__photo.appendChild(photo__image);
