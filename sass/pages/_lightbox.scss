@@ -16,3 +16,19 @@
     max-height: 80vh;
     max-width: 80vw;
 }
+
+.img-btn-next, .img-btn-prev {
+    display: block;
+    padding: 6px 10px;
+    color: $primaire_rouge;
+    position: fixed;
+    top: 48vh;
+    z-index: 500;
+    cursor: pointer;
+    font-size: 48px;
+}
+
+.img-btn-next:hover, .img-btn-prev:hover {
+    transform: scale(1.10);
+}
+

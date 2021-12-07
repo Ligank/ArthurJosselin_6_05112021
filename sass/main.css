@@ -879,6 +879,22 @@ header ul {
   max-width: 80vw;
 }
 
+.img-btn-next, .img-btn-prev {
+  display: block;
+  padding: 6px 10px;
+  color: #901C1C;
+  position: fixed;
+  top: 48vh;
+  z-index: 500;
+  cursor: pointer;
+  font-size: 48px;
+}
+
+.img-btn-next:hover, .img-btn-prev:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 .profil_image {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -149,11 +149,10 @@ function pagePhotographe() {
             if (photographerId == element.photographerId) {
               
               new Media().mediaComparateur(element);
-              likesTotal.push(element.likes)
-              new lightBox().ouverture();
-                    
+              likesTotal.push(element.likes)               
             }
           })
+          new lightBox().ouverture();
 
           //addition likes totaux      
           for (let i = 0; i < likesTotal.length; i++) {
