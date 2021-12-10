@@ -25,10 +25,25 @@
     top: 48vh;
     z-index: 500;
     cursor: pointer;
+    font-size: 3vw;
+}
+
+.close-lightbox-icon {
+    display: block;
+    padding: 6px 10px;
+    color: $primaire_rouge;
+    position: fixed;
+    top: 2vh;
+    right: 5vw;
+    z-index: 500;
+    cursor: pointer;
     font-size: 48px;
 }
 
-.img-btn-next:hover, .img-btn-prev:hover {
+.img-btn-next:hover, .img-btn-prev:hover, .close-lightbox-icon:hover {
     transform: scale(1.10);
 }
 
+.video-large {
+    width: 70vw;
+}

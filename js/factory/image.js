@@ -7,9 +7,9 @@ export default class Image {
         let gallerie__photo = document.createElement("div");
         gallerie__photo.classList.add("gallerie__photo");
         document.querySelector(".gallerie").appendChild(gallerie__photo);
-        gallerie__photo.setAttribute("data-title", element.title)
-        gallerie__photo.setAttribute("data-likes", element.likes)
-        gallerie__photo.setAttribute("data-date", element.date)
+        gallerie__photo.setAttribute("data-title", element.title);
+        gallerie__photo.setAttribute("data-likes", element.likes);
+        gallerie__photo.setAttribute("data-date", element.date);
         let photo__image = document.createElement("a");
         photo__image.classList.add("photo__image");
         gallerie__photo.appendChild(photo__image);
@@ -19,6 +19,9 @@ export default class Image {
         gallerie_img.classList.add("gallerie_img");
         gallerie_img.src = element.image;
         gallerie_img.alt = element.alt;
+        gallerie_img.setAttribute("data-title", element.title);
+        gallerie_img.setAttribute("data-likes", element.likes);
+        gallerie_img.setAttribute("data-date", element.date);
         figure.appendChild(gallerie_img);
         let gallerie__titre_coeur = document.createElement("div");
         gallerie__titre_coeur.classList.add("gallerie__titre_coeur");

@@ -14,10 +14,13 @@ export default class Video {
         let figure = document.createElement("figure");
         figure.classList.add("figureVideo");
         photo__image.appendChild(figure);
-        let gallerie_img = document.createElement("img");
-        gallerie_img.classList.add("gallerie_img");
-        gallerie_img.src = element.thumbnail;
+        let gallerie_img = document.createElement("video");
+        gallerie_img.classList.add("gallerie_img", "video");
+        gallerie_img.src = element.video;
         gallerie_img.alt = element.alt;
+        gallerie_img.setAttribute("data-title", element.title);
+        gallerie_img.setAttribute("data-likes", element.likes);
+        gallerie_img.setAttribute("data-date", element.date);
         figure.appendChild(gallerie_img);
         let play = document.createElement("i");
         play.classList.add("far", "fa-play-circle", "play");

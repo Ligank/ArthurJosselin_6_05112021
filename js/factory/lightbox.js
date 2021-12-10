@@ -6,34 +6,62 @@ export default class lightBox {
         let getLatestOpenedImg;
         let windowWidth = window.innerWidth;
         let imgArray = []
-        imgArray.push(gallerieImages);
+        for (let i = 0; i < gallerieImages.length; ++i) {
+            imgArray.push(gallerieImages[i]);
+          }
 
-        if(gallerieImages) {
-            gallerieImages.forEach(function(image, index) {
+        document.querySelector(".filtre_titre").addEventListener('click', function() {          
+            imgArray.sort(function(a, b) {
+                return a.dataset.title.localeCompare(b.dataset.title);
+            });
+        });
+        document.querySelector(".filtre_date").addEventListener('click', function() {          
+            imgArray.sort(function(a, b) {
+                return a.dataset.date.localeCompare(b.dataset.date);
+            });
+        });
+        document.querySelector(".filtre_populaire").addEventListener('click', function() {
+            imgArray.sort(function(a, b) {
+                return b.dataset.likes-a.dataset.likes;
+            });
+        });
+
+
+        if(imgArray) {
+            imgArray.forEach(function(image) {
                 image.onclick = function() {
-                    console.log(imgArray);
-                    let getFullImgUrl = image.src;
-                    let getImgUrlPos = getFullImgUrl.split("/public/img/");
-                    let setNewImgUrl = getImgUrlPos[1].replace('"), ');
-                    
-                    getLatestOpenedImg = index + 1;
+                    let getFullImgUrl = image.src;              
+                    getLatestOpenedImg = imgArray.indexOf(image, 0) + 1;
 
                     let container = document.body;
                     let newImgWindow = document.createElement("div");
                     container.appendChild(newImgWindow);
                     newImgWindow.classList.add("img-window");
-                    newImgWindow.addEventListener("click", function (click) {
+                    let close = document.createElement("a");
+                    close.classList.add("close-lightbox-icon", "fas", "fa-times");
+                    container.appendChild(close);
+                    close.addEventListener("click", function (click) {
                         document.querySelector(".img-window").remove();
                         document.querySelector(".img-btn-prev").remove();
                         document.querySelector(".img-btn-next").remove();
+                        document.querySelector(".close-lightbox-icon").remove();
                     })
 
-                    let newImg = document.createElement("img");
-                    newImgWindow.appendChild(newImg);
-                    newImg.setAttribute("src", "public/img/" + setNewImgUrl);
-                    newImg.setAttribute("id", "current-img");
-                    console.log(setNewImgUrl);
-
+                    let newImg;
+                    if (image.classList.contains("video")) {
+                        newImg = document.createElement("video");
+                        newImgWindow.appendChild(newImg);
+                        newImg.setAttribute("src", getFullImgUrl);
+                        newImg.setAttribute("controls", "");
+                        newImg.setAttribute("id", "current-img");
+                        newImg.setAttribute("class", "video-large");
+                    } else {
+                        newImg = document.createElement("img");
+                        newImgWindow.appendChild(newImg);
+                        newImg.setAttribute("src", getFullImgUrl);
+                        newImg.setAttribute("id", "current-img");
+                    }
+                 
                     newImg.onload = function() {
                         let imgWidth = this.width;
                         let calcImgToEdge = ((windowWidth - imgWidth) / 2) - 80;
@@ -46,19 +74,40 @@ export default class lightBox {
                             document.querySelector("#current-img").remove();
 
                             let getImgWindow = document.querySelector(".img-window");
-                            let newImg = document.createElement("img");
-                            getImgWindow.appendChild(newImg);
 
                             let calcNewImg;
                                 calcNewImg = getLatestOpenedImg - 1;
                                 if(calcNewImg < 1) {
-                                    calcNewImg = gallerieImages.length;
-                                }
+                                    calcNewImg = imgArray.length;
+                                }                                                 
                                 
-                            newImg.setAttribute("src", "img");
-                            newImg.setAttribute("id", "current-img");
-    
-                            getLatestOpenedImg = calcNewImg;
+                               if (imgArray[calcNewImg - 1].classList.contains("video")) {
+                                newImg = document.createElement("video");
+                                let newImgSrc = imgArray[calcNewImg - 1].src;                              
+                                newImg.setAttribute("src", newImgSrc);
+                                newImg.setAttribute("controls", "");
+                                newImg.setAttribute("id", "current-img");
+                                newImg.setAttribute("class", "video-large");
+                            } else {
+                                newImg = document.createElement("img");
+                                let newImgSrc = imgArray[calcNewImg - 1].src;
+                                newImg.setAttribute("src", newImgSrc);
+                                newImg.setAttribute("id", "current-img");
+                            }
+            
+                               getLatestOpenedImg = calcNewImg;
+                               getImgWindow.appendChild(newImg);
+
+                               newImg.onload = function () {
+                                   let imgWidth = this.width;
+                                   let calcImgToEdge = ((windowWidth - imgWidth) / 2) - 80;
+
+                                   let nextBtn = document.querySelector(".img-btn-next");
+                                   nextBtn.style.cssText = "right: " + calcImgToEdge + "px";
+
+                                   let prevBtn = document.querySelector(".img-btn-prev");
+                                   prevBtn.style.cssText = "left: " + calcImgToEdge + "px";
+                               }                 
                         })
 
                         let newNextBtn = document.createElement("a");
@@ -69,27 +118,47 @@ export default class lightBox {
                             document.querySelector("#current-img").remove();
 
                             let getImgWindow = document.querySelector(".img-window");
-                            let newImg = document.createElement("img");
-                            getImgWindow.appendChild(newImg);
-
+                           
                             let calcNewImg;
                             calcNewImg = getLatestOpenedImg + 1;
-                            if(calcNewImg > gallerieImages.length) {
+                            if(calcNewImg > imgArray.length) {
                                 calcNewImg = 1;
-                            }
-                            
-                        //newImg.setAttribute("src", );
-                        //newImg.setAttribute("id", "current-img");
+                            }  
 
-                        //getLatestOpenedImg = calcNewImg;
+                            if (imgArray[calcNewImg - 1].classList.contains("video")) {
+                                newImg = document.createElement("video");
+                                let newImgSrc = imgArray[calcNewImg - 1].src;                              
+                                newImg.setAttribute("src", newImgSrc);
+                                newImg.setAttribute("controls", "");
+                                newImg.setAttribute("id", "current-img");
+                                newImg.setAttribute("class", "video-large");
+                            } else {
+                                newImg = document.createElement("img");
+                                let newImgSrc = imgArray[calcNewImg - 1].src;
+                                newImg.setAttribute("src", newImgSrc);
+                                newImg.setAttribute("id", "current-img");
+                            }
+
+                               
+                               getImgWindow.appendChild(newImg);
+                               getLatestOpenedImg = calcNewImg;
+
+                               newImg.onload = function () {
+                                   let imgWidth = this.width;
+                                   let calcImgToEdge = ((windowWidth - imgWidth) / 2) - 80;
+
+                                   let nextBtn = document.querySelector(".img-btn-next");
+                                   nextBtn.style.cssText = "right: " + calcImgToEdge + "px";
+
+                                   let prevBtn = document.querySelector(".img-btn-prev");
+                                   prevBtn.style.cssText = "left: " + calcImgToEdge + "px";
+                               }                      
                         })
                     }               
                 }
             });
         }
-        
     }
-    
 }
 
 

@@ -887,12 +887,28 @@ header ul {
   top: 48vh;
   z-index: 500;
   cursor: pointer;
+  font-size: 3vw;
+}
+
+.close-lightbox-icon {
+  display: block;
+  padding: 6px 10px;
+  color: #901C1C;
+  position: fixed;
+  top: 2vh;
+  right: 5vw;
+  z-index: 500;
+  cursor: pointer;
   font-size: 48px;
 }
 
-.img-btn-next:hover, .img-btn-prev:hover {
+.img-btn-next:hover, .img-btn-prev:hover, .close-lightbox-icon:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.video-large {
+  width: 70vw;
 }
 
 .profil_image {

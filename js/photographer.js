@@ -196,7 +196,7 @@ function pagePhotographe() {
         //ouverture
 
         const formulaire = document.querySelector(".fond");
-        const formulaireBtn = document.querySelectorAll(".contact_btn");
+        const formulaireBtn = document.querySelectorAll(".contact");
         const closeBtn = document.querySelectorAll("#croix")
 
         //ouvrir formulaire
