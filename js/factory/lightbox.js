@@ -42,9 +42,9 @@ export default class lightBox {
                     container.appendChild(close);
                     close.addEventListener("click", function (click) {
                         document.querySelector(".img-window").remove();
-                        document.querySelector(".img-btn-prev").remove();
-                        document.querySelector(".img-btn-next").remove();
                         document.querySelector(".close-lightbox-icon").remove();
+                        document.querySelector(".img-btn-prev").remove();
+                        document.querySelector(".img-btn-next").remove(); 
                     })
 
                     let newImg;
@@ -71,7 +71,67 @@ export default class lightBox {
                         newPrevBtn.classList.add("img-btn-prev", "fas", "fa-chevron-left");
                         newPrevBtn.style.cssText = "left: " + calcImgToEdge + "px";
                         newPrevBtn.addEventListener("click", function (click) {
-                            document.querySelector("#current-img").remove();
+                            prev(image);                                           
+                        })
+
+                        document.addEventListener('keydown', function(e) {
+                            switch (e.keyCode) {
+                                case 37:
+                                    prev(image);
+                            }
+                        })
+
+                        let newNextBtn = document.createElement("a");
+                        container.appendChild(newNextBtn);
+                        newNextBtn.classList.add("img-btn-next", "fas", "fa-chevron-right");
+                        newNextBtn.style.cssText = "right: " + (calcImgToEdge - 15) + "px";
+                        newNextBtn.addEventListener("click", function (click) {
+                            next(image);                    
+                        })
+
+                        document.addEventListener('keydown', function(e) {
+                            switch (e.keyCode) {
+                                case 39:
+                                    next(image);
+                            }
+                        })
+                    }
+                    
+                    newImg.onloadeddata = function() {
+                        let imgWidth = 1350;
+                        let calcImgToEdge = ((windowWidth - imgWidth) / 2) - 80;
+
+                        let newPrevBtn = document.createElement("a");
+                        container.appendChild(newPrevBtn);
+                        newPrevBtn.classList.add("img-btn-prev", "fas", "fa-chevron-left");
+                        newPrevBtn.style.cssText = "left: " + calcImgToEdge + "px";
+                        newPrevBtn.addEventListener("click", function (click) {
+                            prev(image);                
+                        })
+                        document.addEventListener('keydown', function(e) {
+                            switch (e.keyCode) {
+                                case 37:
+                                    prev(image);
+                            }
+                        })
+
+                        let newNextBtn = document.createElement("a");
+                        container.appendChild(newNextBtn);
+                        newNextBtn.classList.add("img-btn-next", "fas", "fa-chevron-right");
+                        newNextBtn.style.cssText = "right: " + (calcImgToEdge - 15) + "px";
+                        newNextBtn.addEventListener("click", function (click) {
+                            next(image);                      
+                        })
+                        document.addEventListener('keydown', function(e) {
+                            switch (e.keyCode) {
+                                case 39:
+                                    next(image);
+                            }
+                        })
+                    }
+
+                    function prev(image) {
+                        document.querySelector("#current-img").remove();
 
                             let getImgWindow = document.querySelector(".img-window");
 
@@ -107,15 +167,21 @@ export default class lightBox {
 
                                    let prevBtn = document.querySelector(".img-btn-prev");
                                    prevBtn.style.cssText = "left: " + calcImgToEdge + "px";
-                               }                 
-                        })
+                               }
+                               newImg.onloadeddata = function () {
+                                let imgWidth = 1350;
+                                let calcImgToEdge = ((windowWidth - imgWidth) / 2) - 80;
 
-                        let newNextBtn = document.createElement("a");
-                        container.appendChild(newNextBtn);
-                        newNextBtn.classList.add("img-btn-next", "fas", "fa-chevron-right");
-                        newNextBtn.style.cssText = "right: " + calcImgToEdge + "px";
-                        newNextBtn.addEventListener("click", function (click) {
-                            document.querySelector("#current-img").remove();
+                                let nextBtn = document.querySelector(".img-btn-next");
+                                nextBtn.style.cssText = "right: " + (calcImgToEdge - 15) + "px";
+
+                                let prevBtn = document.querySelector(".img-btn-prev");
+                                prevBtn.style.cssText = "left: " + calcImgToEdge + "px";
+                            }
+                    }
+
+                    function next(image) {
+                        document.querySelector("#current-img").remove();
 
                             let getImgWindow = document.querySelector(".img-window");
                            
@@ -148,13 +214,22 @@ export default class lightBox {
                                    let calcImgToEdge = ((windowWidth - imgWidth) / 2) - 80;
 
                                    let nextBtn = document.querySelector(".img-btn-next");
-                                   nextBtn.style.cssText = "right: " + calcImgToEdge + "px";
+                                   nextBtn.style.cssText = "right: " + (calcImgToEdge - 15) + "px";
 
                                    let prevBtn = document.querySelector(".img-btn-prev");
                                    prevBtn.style.cssText = "left: " + calcImgToEdge + "px";
-                               }                      
-                        })
-                    }               
+                               }
+                               newImg.onloadeddata = function () {
+                                let imgWidth = 1350;
+                                let calcImgToEdge = ((windowWidth - imgWidth) / 2) - 80;
+
+                                let nextBtn = document.querySelector(".img-btn-next");
+                                nextBtn.style.cssText = "right: " + (calcImgToEdge - 15) + "px";
+
+                                let prevBtn = document.querySelector(".img-btn-prev");
+                                prevBtn.style.cssText = "left: " + calcImgToEdge + "px";
+                            }
+                    }
                 }
             });
         }

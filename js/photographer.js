@@ -216,6 +216,7 @@ function pagePhotographe() {
         //verication formulaire
         const myForm = document.getElementById('myForm');
         const prenom = document.getElementById('prenom');
+        const message = document.getElementById('message');
         const myRegex = /^[A-zÀ-ÿ]+[A-zÀ-ÿ]$/;
         const myRegexMail = /^[A-zÀ-ÿ0-9.!#$%&'*+/=?^_`{|}~-]+@[A-zÀ-ÿ0-9-]+[.]{1}[A-zÀ-ÿ0-9-]{2,3}$/;
         const nom = document.getElementById('nom');
@@ -273,6 +274,13 @@ function pagePhotographe() {
                   let myError = document.getElementById("errorMail");
                   myError.innerHTML = "";
                   email.style.border = "2px solid green";
+            }
+
+            if (prenom.value.trim() == "" && nom.value.trim() == "" && email.value.trim() == "") {
+              console.log("Prénom : " + prenom.value);
+              console.log("Nom : " + nom.value);
+              console.log("Email : " + email.value);
+              console.log("Email : " + message.value);
             }
         });       
       })
