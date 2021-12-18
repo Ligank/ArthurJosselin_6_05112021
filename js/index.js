@@ -85,6 +85,7 @@ function pageIndex() {
             tag.innerHTML = "#" + filtre;
             tag.classList.add("tag","tag_profil");
             tag.setAttribute("data-filter", filtre)
+            tag.setAttribute("aria-label", "Filtre" + filtre)
             tag_li.appendChild(tag);
             photographe_profil.classList.add(filtre);
             })

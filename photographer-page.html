@@ -14,23 +14,23 @@
 </head>
 <body>
     <header>
-        <a href="index.html" class="logo_lien">
+        <a href="index.html" class="logo_lien" aria-label="Logo Fisheye">
             <img src="public/img/Logo.png" alt="logo" class="logo_img">
         </a>
     </header>   
 
     <main id="main">
-        <div class="photographe_page">
+        <div class="photographe_page" aria-label="Information du photographe">
             
         </div>
 
-        <div class="filtres">
+        <div class="filtres" aria-label="Filtres">
             <label class="titre_filtres">Trier par</label>
-            <button class="popularite_btn filtre_bouton" aria-label="Filtre par popularité"><span class="filtre_nom">Popularité</span><i class="fas fa-chevron-down"></i></button>
-            <button class="date_btn filtre_bouton" aria-label="Filtre par date"><span class="filtre_nom">Date</span><i class="fas fa-chevron-down"></i></button>
-            <button class="titre_btn filtre_bouton" aria-label="Filtre par titre"><span class="filtre_nom">Titre</span><i class="fas fa-chevron-down"></i></button>
+            <button class="popularite_btn filtre_bouton" aria-label="Filtre par popularité"><span class="filtre_nom">Popularité</span><em class="fas fa-chevron-down"></em></button>
+            <button class="date_btn filtre_bouton" aria-label="Filtre par date"><span class="filtre_nom">Date</span><em class="fas fa-chevron-down"></em></button>
+            <button class="titre_btn filtre_bouton" aria-label="Filtre par titre"><span class="filtre_nom">Titre</span><em class="fas fa-chevron-down"></em></button>
             <div class="filtre_deroule">
-                <p class="filtre_nom filtre_populaire filtre_cursor" aria-label="Filtre par popularité">Popularité<i class="fas fa-chevron-up"></i></p>
+                <p class="filtre_nom filtre_populaire filtre_cursor" aria-label="Filtre par popularité">Popularité<em class="fas fa-chevron-up"></em></p>
                 <p class="filtre_nom filtre_date filtre_cursor" aria-label="Filtre par date">Date</p>
                 <p class="filtre_nom filtre_titre filtre_cursor" aria-label="Filtre par titre">Titre</p>
             </div>
@@ -44,7 +44,7 @@
               <span class="croix" id="croix"></span>
               <div class="formulaire_input">
                 <div class="nom_formulaire"></div>
-                <form id="myForm" name="contact_formulaire" action="javascript:closeValidate()" method="post">
+                <form id="myForm" name="contact_formulaire" action="javascript:closeValidate()" method="post" aria-label="Formulaire de contact">
                   <div class="formData">
                     <label>Prénom</label><br>
                     <input
@@ -53,6 +53,8 @@
                       id="prenom"
                       name="prenom"
                       minlength="2"
+                      aria-label="prénom"
+                      title="prenom"
                     /><br>
                     <span id="erreur_prenom"></span>
                   </div>
@@ -64,6 +66,8 @@
                       type="text"
                       id="nom"
                       name="nom"
+                      aria-label="Nom de famille"
+                      title="nom"
                     /><br>
                     <span id="erreur_nom"></span>
                   </div>
@@ -75,22 +79,28 @@
                       type="text"
                       id="email"
                       name="email"
+                      aria-label="Email"
+                      title="email"
                     /><br>
                     <span id="errorMail"></span>
                   </div>
                   <div
                     class="formData">
-                    <label>Votre message</label><br>
-                    <textarea 
-                    class="formulaire_case"
+                    <label>Votre message
+                      <textarea 
+                      class="formulaire_case"
                       id="message"
-                      name="message">                      
-                    </textarea>                  
+                      name="message"
+                      aria-label="Votre message">                      
+                      </textarea> 
+                    </label>
+                                     
                   </div>
                   <input
                     class="bouton_envoyer contact"
                     type="submit"
                     value="Envoyer"
+                    aria-label="Envoyer votre message"
                   />
                 </form>
               </div>

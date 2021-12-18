@@ -2,7 +2,7 @@
 
 import Image from "./image.js";
 import Video from "./video.js";
-
+//check si l'element est une image ou une video
 export default class MediaFactory {
     mediaComparateur(element) {
         

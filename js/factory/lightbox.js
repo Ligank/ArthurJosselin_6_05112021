@@ -2,6 +2,7 @@
 
 export default class lightBox {
     ouverture(element) {
+        //creation array avec les images
         let gallerieImages = document.querySelectorAll(".gallerie_img");
         let getLatestOpenedImg;
         let windowWidth = window.innerWidth;
@@ -9,7 +10,7 @@ export default class lightBox {
         for (let i = 0; i < gallerieImages.length; ++i) {
             imgArray.push(gallerieImages[i]);
           }
-
+        //tri de l'array
         document.querySelector(".filtre_titre").addEventListener('click', function() {          
             imgArray.sort(function(a, b) {
                 return a.dataset.title.localeCompare(b.dataset.title);
@@ -26,7 +27,7 @@ export default class lightBox {
             });
         });
 
-
+        //creation de l'image dans la lightbox et recuperation de sa place dans l'array
         if(imgArray) {
             imgArray.forEach(function(image) {
                 image.onclick = function() {
@@ -46,7 +47,7 @@ export default class lightBox {
                         document.querySelector(".img-btn-prev").remove();
                         document.querySelector(".img-btn-next").remove(); 
                     })
-
+                    //creation d'image ou video
                     let newImg;
                     if (image.classList.contains("video")) {
                         newImg = document.createElement("video");
@@ -61,7 +62,7 @@ export default class lightBox {
                         newImg.setAttribute("src", getFullImgUrl);
                         newImg.setAttribute("id", "current-img");
                     }
-                 
+                    //creation des fleches pour l'image
                     newImg.onload = function() {
                         let imgWidth = this.width;
                         let calcImgToEdge = ((windowWidth - imgWidth) / 2) - 80;
@@ -96,7 +97,7 @@ export default class lightBox {
                             }
                         })
                     }
-                    
+                    //creation des fleches pour la video
                     newImg.onloadeddata = function() {
                         let imgWidth = 1350;
                         let calcImgToEdge = ((windowWidth - imgWidth) / 2) - 80;
@@ -129,7 +130,7 @@ export default class lightBox {
                             }
                         })
                     }
-
+                    //evenement quand on clique la fleche de gauche
                     function prev(image) {
                         document.querySelector("#current-img").remove();
 
@@ -179,7 +180,7 @@ export default class lightBox {
                                 prevBtn.style.cssText = "left: " + calcImgToEdge + "px";
                             }
                     }
-
+                    //evenement quand on clique la fleche de droite
                     function next(image) {
                         document.querySelector("#current-img").remove();
 
