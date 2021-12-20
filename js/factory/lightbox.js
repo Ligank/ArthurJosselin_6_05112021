@@ -7,6 +7,7 @@ export default class lightBox {
         let getLatestOpenedImg;
         let windowWidth = window.innerWidth;
         let imgArray = []
+        console.log(windowWidth)
         for (let i = 0; i < gallerieImages.length; ++i) {
             imgArray.push(gallerieImages[i]);
           }
@@ -66,11 +67,18 @@ export default class lightBox {
                     newImg.onload = function() {
                         let imgWidth = this.width;
                         let calcImgToEdge = ((windowWidth - imgWidth) / 2) - 80;
+                        console.log(imgWidth)
 
                         let newPrevBtn = document.createElement("a");
                         container.appendChild(newPrevBtn);
                         newPrevBtn.classList.add("img-btn-prev", "fas", "fa-chevron-left");
-                        newPrevBtn.style.cssText = "left: " + calcImgToEdge + "px";
+                        if  (window.matchMedia("(max-width: 768px)").matches) {
+                            newPrevBtn.style.cssText = "left: " + (calcImgToEdge + 40) + "px";
+                            newPrevBtn.style.fontSize = 30 + "px"
+                        } else {
+                            newPrevBtn.style.cssText = "left: " + calcImgToEdge + "px";
+                        }
+                        
                         newPrevBtn.addEventListener("click", function (click) {
                             prev(image);                                           
                         })
@@ -85,7 +93,12 @@ export default class lightBox {
                         let newNextBtn = document.createElement("a");
                         container.appendChild(newNextBtn);
                         newNextBtn.classList.add("img-btn-next", "fas", "fa-chevron-right");
-                        newNextBtn.style.cssText = "right: " + (calcImgToEdge - 15) + "px";
+                        if  (window.matchMedia("(max-width: 768px)").matches) {
+                            newNextBtn.style.cssText = "right: " + (calcImgToEdge + 40) + "px";
+                            newNextBtn.style.fontSize = 30 + "px"
+                        } else {
+                            newNextBtn.style.cssText = "right: " + (calcImgToEdge - 15) + "px";
+                        }
                         newNextBtn.addEventListener("click", function (click) {
                             next(image);                    
                         })
@@ -105,7 +118,12 @@ export default class lightBox {
                         let newPrevBtn = document.createElement("a");
                         container.appendChild(newPrevBtn);
                         newPrevBtn.classList.add("img-btn-prev", "fas", "fa-chevron-left");
-                        newPrevBtn.style.cssText = "left: " + calcImgToEdge + "px";
+                        if  (window.matchMedia("(max-width: 768px)").matches) {
+                            newPrevBtn.style.cssText = "left: " + 10 + "px";
+                            newPrevBtn.style.fontSize = 30 + "px"
+                        } else {
+                            newPrevBtn.style.cssText = "left: " + calcImgToEdge + "px";
+                        }
                         newPrevBtn.addEventListener("click", function (click) {
                             prev(image);                
                         })
@@ -119,7 +137,12 @@ export default class lightBox {
                         let newNextBtn = document.createElement("a");
                         container.appendChild(newNextBtn);
                         newNextBtn.classList.add("img-btn-next", "fas", "fa-chevron-right");
-                        newNextBtn.style.cssText = "right: " + (calcImgToEdge - 15) + "px";
+                        if  (window.matchMedia("(max-width: 768px)").matches) {
+                            newNextBtn.style.cssText = "right: " + 10 + "px";
+                            newNextBtn.style.fontSize = 30 + "px"
+                        } else {
+                            newNextBtn.style.cssText = "right: " + (calcImgToEdge - 15) + "px";
+                        }
                         newNextBtn.addEventListener("click", function (click) {
                             next(image);                      
                         })
@@ -164,20 +187,40 @@ export default class lightBox {
                                    let calcImgToEdge = ((windowWidth - imgWidth) / 2) - 80;
 
                                    let nextBtn = document.querySelector(".img-btn-next");
-                                   nextBtn.style.cssText = "right: " + calcImgToEdge + "px";
+                                   if  (window.matchMedia("(max-width: 768px)").matches) {
+                                    nextBtn.style.cssText = "right: " + (calcImgToEdge + 40) + "px";
+                                    nextBtn.style.fontSize = 30 + "px"
+                                    } else {
+                                        nextBtn.style.cssText = "right: " + (calcImgToEdge - 15) + "px";
+                                    }
 
                                    let prevBtn = document.querySelector(".img-btn-prev");
-                                   prevBtn.style.cssText = "left: " + calcImgToEdge + "px";
+                                   if  (window.matchMedia("(max-width: 768px)").matches) {
+                                    prevBtn.style.cssText = "left: " + (calcImgToEdge + 40) + "px";
+                                    prevBtn.style.fontSize = 30 + "px"
+                                    } else {
+                                        prevBtn.style.cssText = "left: " + calcImgToEdge + "px";
+                                    }
                                }
                                newImg.onloadeddata = function () {
                                 let imgWidth = 1350;
                                 let calcImgToEdge = ((windowWidth - imgWidth) / 2) - 80;
 
                                 let nextBtn = document.querySelector(".img-btn-next");
-                                nextBtn.style.cssText = "right: " + (calcImgToEdge - 15) + "px";
+                                if  (window.matchMedia("(max-width: 768px)").matches) {
+                                    nextBtn.style.cssText = "right: " + 10 + "px";
+                                    nextBtn.style.fontSize = 30 + "px"
+                                } else {
+                                    nextBtn.style.cssText = "right: " + (calcImgToEdge - 15) + "px";
+                                }
 
                                 let prevBtn = document.querySelector(".img-btn-prev");
-                                prevBtn.style.cssText = "left: " + calcImgToEdge + "px";
+                                if  (window.matchMedia("(max-width: 768px)").matches) {
+                                    prevBtn.style.cssText = "left: " + 10 + "px";
+                                    prevBtn.style.fontSize = 30 + "px"
+                                } else {
+                                    prevBtn.style.cssText = "left: " + calcImgToEdge + "px";
+                                }
                             }
                     }
                     //evenement quand on clique la fleche de droite
@@ -215,20 +258,40 @@ export default class lightBox {
                                    let calcImgToEdge = ((windowWidth - imgWidth) / 2) - 80;
 
                                    let nextBtn = document.querySelector(".img-btn-next");
-                                   nextBtn.style.cssText = "right: " + (calcImgToEdge - 15) + "px";
+                                   if  (window.matchMedia("(max-width: 768px)").matches) {
+                                    nextBtn.style.cssText = "right: " + (calcImgToEdge + 40) + "px";
+                                    nextBtn.style.fontSize = 30 + "px"
+                                    } else {
+                                        nextBtn.style.cssText = "right: " + (calcImgToEdge - 15) + "px";
+                                    }
 
                                    let prevBtn = document.querySelector(".img-btn-prev");
-                                   prevBtn.style.cssText = "left: " + calcImgToEdge + "px";
+                                   if  (window.matchMedia("(max-width: 768px)").matches) {
+                                    prevBtn.style.cssText = "left: " + (calcImgToEdge + 40) + "px";
+                                    prevBtn.style.fontSize = 30 + "px"
+                                    } else {
+                                        prevBtn.style.cssText = "left: " + calcImgToEdge + "px";
+                                    }
                                }
                                newImg.onloadeddata = function () {
                                 let imgWidth = 1350;
                                 let calcImgToEdge = ((windowWidth - imgWidth) / 2) - 80;
 
                                 let nextBtn = document.querySelector(".img-btn-next");
-                                nextBtn.style.cssText = "right: " + (calcImgToEdge - 15) + "px";
+                                if  (window.matchMedia("(max-width: 768px)").matches) {
+                                    nextBtn.style.cssText = "right: " + 10 + "px";
+                                    nextBtn.style.fontSize = 30 + "px"
+                                } else {
+                                    nextBtn.style.cssText = "right: " + (calcImgToEdge - 15) + "px";
+                                }
 
                                 let prevBtn = document.querySelector(".img-btn-prev");
-                                prevBtn.style.cssText = "left: " + calcImgToEdge + "px";
+                                if  (window.matchMedia("(max-width: 768px)").matches) {
+                                    newPrevBtn.style.cssText = "left: " + 10 + "px";
+                                    newPrevBtn.style.fontSize = 30 + "px"
+                                } else {
+                                    newPrevBtn.style.cssText = "left: " + calcImgToEdge + "px";
+                                }
                             }
                     }
                 }

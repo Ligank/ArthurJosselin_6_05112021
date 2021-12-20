@@ -402,6 +402,7 @@ header {
           justify-content: space-between;
   width: 70%;
   height: 157px;
+  margin-bottom: 50px;
 }
 
 header .logo_lien {
@@ -888,6 +889,16 @@ header ul {
   z-index: 500;
   cursor: pointer;
   font-size: 3vw;
+}
+
+.portable-next {
+  font-size: 30px;
+  right: 5px;
+}
+
+.portable-prev {
+  font-size: 30px;
+  left: 5px;
 }
 
 .close-lightbox-icon {
