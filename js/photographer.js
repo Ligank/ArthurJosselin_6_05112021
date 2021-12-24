@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 import Media from "./factory/media.js";
 import lightBox from "./factory/lightBox.js";
@@ -6,12 +6,6 @@ import lightBox from "./factory/lightBox.js";
 window.onload = function() {
   pagePhotographe();
 };
-
-//formulaire----------------------------------------------------------------
-function closeValidate() {
-  location.reload();
-};
-
 
 let likesTotal = []
 let sumLikes = 0;
@@ -27,34 +21,34 @@ const myFilterLargeDate = document.querySelector(".filtre_date");
 const myFilterLargeTitle = document.querySelector(".filtre_titre");
 
 
-myFilterPopular.addEventListener('click', function() {
+myFilterPopular.addEventListener("click", function() {
     myFilterPopular.style.display = "none";
     myFilterLarge.style.display = "flex";
 });
 
-myFilterDate.addEventListener('click', function() {
+myFilterDate.addEventListener("click", function() {
     myFilterDate.style.display = "none";
     myFilterLarge.style.display = "flex";
 });
 
-myFilterTitle.addEventListener('click', function() {
+myFilterTitle.addEventListener("click", function() {
     myFilterTitle.style.display = "none";
     myFilterLarge.style.display = "flex";
 });
 
-myFilterLargePopular.addEventListener('click', function() {
+myFilterLargePopular.addEventListener("click", function() {
     myFilterLarge.style.display = "none";
     myFilterPopular.style.display = "initial";
     sortPopular();
 });
 
-myFilterLargeDate.addEventListener('click', function() {
+myFilterLargeDate.addEventListener("click", function() {
     myFilterLarge.style.display = "none";
     myFilterDate.style.display = "initial";
     sortDate();
 });
 
-myFilterLargeTitle.addEventListener('click', function() {
+myFilterLargeTitle.addEventListener("click", function() {
     myFilterLarge.style.display = "none";
     myFilterTitle.style.display = "initial";
     sortTitle();
@@ -161,7 +155,7 @@ function pagePhotographe() {
 
           //addition likes photos
           document.querySelectorAll(".coeur_vide").forEach(item => {
-            item.addEventListener('click', event => {
+            item.addEventListener('click', function() {
               item.style.display = "none";
               item.nextElementSibling.style.display = "initial";
               sumLikes = sumLikes + 1
@@ -172,7 +166,7 @@ function pagePhotographe() {
 
           //soustraction likes photos
           document.querySelectorAll(".coeur_plein").forEach(item => {
-            item.addEventListener('click', event => {
+            item.addEventListener('click', function() {
               item.style.display = "none";
               item.previousElementSibling.style.display = "initial";
               sumLikes = sumLikes - 1
@@ -192,7 +186,7 @@ function pagePhotographe() {
           prix.innerHTML = photographers[0].price + "€/jour"
           document.querySelector(".lien_bas_page").appendChild(prix)
       })
-      .then(data => {
+      .then(function() {
         //ouverture
 
         const formulaire = document.querySelector(".fond");
@@ -204,14 +198,14 @@ function pagePhotographe() {
 
         function lancerFormulaire() {
           formulaire.style.display = "block";
-        };
+        }
 
         //fermer formulaire
         closeBtn.forEach((btn) => btn.addEventListener("click", closemodal));
 
         function closemodal() {
           formulaire.style.display = "none";
-        }; 
+        }
 
         //verication formulaire
         const myForm = document.getElementById('myForm');
@@ -240,6 +234,7 @@ function pagePhotographe() {
                   let myError = document.getElementById("erreur_prenom");
                   myError.innerHTML = "";
                   prenom.style.border = "2px solid green";
+                  console.log("Prénom : " + prenom.value);
             }
           
             /*nom*/
@@ -257,6 +252,7 @@ function pagePhotographe() {
                 let myError = document.getElementById("erreur_nom");
                   myError.innerHTML = "";
                   nom.style.border = "2px solid green";
+                  console.log("Nom : " + nom.value);
             }
           
             /*Email*/
@@ -274,13 +270,8 @@ function pagePhotographe() {
                   let myError = document.getElementById("errorMail");
                   myError.innerHTML = "";
                   email.style.border = "2px solid green";
-            }
-
-            if (prenom.value.trim() == "" && nom.value.trim() == "" && email.value.trim() == "") {
-              console.log("Prénom : " + prenom.value);
-              console.log("Nom : " + nom.value);
-              console.log("Email : " + email.value);
-              console.log("Email : " + message.value);
+                  console.log("Email : " + email.value);
+                  console.log("Message : " + message.value);
             }
         });       
       })

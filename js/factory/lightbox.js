@@ -1,13 +1,12 @@
 'use strict';
 
 export default class lightBox {
-    ouverture(element) {
+    ouverture() {
         //creation array avec les images
         let gallerieImages = document.querySelectorAll(".gallerie_img");
         let getLatestOpenedImg;
         let windowWidth = window.innerWidth;
         let imgArray = []
-        console.log(windowWidth)
         for (let i = 0; i < gallerieImages.length; ++i) {
             imgArray.push(gallerieImages[i]);
           }
@@ -42,7 +41,7 @@ export default class lightBox {
                     let close = document.createElement("a");
                     close.classList.add("close-lightbox-icon", "fas", "fa-times");
                     container.appendChild(close);
-                    close.addEventListener("click", function (click) {
+                    close.addEventListener("click", function () {
                         document.querySelector(".img-window").remove();
                         document.querySelector(".close-lightbox-icon").remove();
                         document.querySelector(".img-btn-prev").remove();
@@ -79,7 +78,7 @@ export default class lightBox {
                             newPrevBtn.style.cssText = "left: " + calcImgToEdge + "px";
                         }
                         
-                        newPrevBtn.addEventListener("click", function (click) {
+                        newPrevBtn.addEventListener("click", function () {
                             prev(image);                                           
                         })
 
@@ -99,7 +98,7 @@ export default class lightBox {
                         } else {
                             newNextBtn.style.cssText = "right: " + (calcImgToEdge - 15) + "px";
                         }
-                        newNextBtn.addEventListener("click", function (click) {
+                        newNextBtn.addEventListener("click", function () {
                             next(image);                    
                         })
 
@@ -124,7 +123,7 @@ export default class lightBox {
                         } else {
                             newPrevBtn.style.cssText = "left: " + calcImgToEdge + "px";
                         }
-                        newPrevBtn.addEventListener("click", function (click) {
+                        newPrevBtn.addEventListener("click", function () {
                             prev(image);                
                         })
                         document.addEventListener('keydown', function(e) {
@@ -143,7 +142,7 @@ export default class lightBox {
                         } else {
                             newNextBtn.style.cssText = "right: " + (calcImgToEdge - 15) + "px";
                         }
-                        newNextBtn.addEventListener("click", function (click) {
+                        newNextBtn.addEventListener("click", function () {
                             next(image);                      
                         })
                         document.addEventListener('keydown', function(e) {
@@ -154,7 +153,7 @@ export default class lightBox {
                         })
                     }
                     //evenement quand on clique la fleche de gauche
-                    function prev(image) {
+                    function prev() {
                         document.querySelector("#current-img").remove();
 
                             let getImgWindow = document.querySelector(".img-window");
@@ -224,7 +223,7 @@ export default class lightBox {
                             }
                     }
                     //evenement quand on clique la fleche de droite
-                    function next(image) {
+                    function next() {
                         document.querySelector("#current-img").remove();
 
                             let getImgWindow = document.querySelector(".img-window");
@@ -285,7 +284,7 @@ export default class lightBox {
                                     nextBtn.style.cssText = "right: " + (calcImgToEdge - 15) + "px";
                                 }
 
-                                let prevBtn = document.querySelector(".img-btn-prev");
+                                let newPrevBtn = document.querySelector(".img-btn-prev");
                                 if  (window.matchMedia("(max-width: 768px)").matches) {
                                     newPrevBtn.style.cssText = "left: " + 10 + "px";
                                     newPrevBtn.style.fontSize = 30 + "px"
@@ -299,8 +298,3 @@ export default class lightBox {
         }
     }
 }
-
-
-    
-
-

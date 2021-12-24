@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 //Filtres
 export default class Filtre {
@@ -32,7 +32,7 @@ export default class Filtre {
         });
     
         return filtreSelection
-    };
+    }
 
     //Compare avec les profils pour trouver ceux avec le même tag
     comparaisonFiltres(article) {

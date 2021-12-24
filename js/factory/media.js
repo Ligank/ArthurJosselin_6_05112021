@@ -6,9 +6,9 @@ import Video from "./video.js";
 export default class MediaFactory {
     mediaComparateur(element) {
         
-        if (element.hasOwnProperty("image")) {
+        if (Object.prototype.hasOwnProperty.call(element, "image")) {
             new Image().creationMedia(element);
-        } else if (element.hasOwnProperty("video")) {
+        } else if (Object.prototype.hasOwnProperty.call(element, "video")) {
             new Video().creationMedia(element);
         }
     }

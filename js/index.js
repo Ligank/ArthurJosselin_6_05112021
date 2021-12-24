@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 import Filtre from "/js/filtre.js";
 
@@ -42,7 +42,7 @@ function pageIndex() {
             profil_image.appendChild(figure);
             let profil_img = document.createElement("img");
             profil_img.src = element.portrait;
-            profil_img.alt = "Image photographe";
+            profil_img.alt = "Photo" + element.name;
             profil_img.classList.add("profil_img");
             figure.appendChild(profil_img);
 
@@ -99,4 +99,4 @@ function pageIndex() {
         .catch(function() {
         console.log("erreur");
         });
-};
+}

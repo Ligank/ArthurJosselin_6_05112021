@@ -484,6 +484,7 @@ header ul {
       -ms-flex-direction: column;
           flex-direction: column;
   margin-top: 40px;
+  margin-left: 5px;
 }
 
 .photographe_page .page__nom_et_tag .tag_photographe_profil {
@@ -502,6 +503,12 @@ header ul {
 
 .photographe_page .page__contact {
   margin: auto 0 auto 0;
+}
+
+@media screen and (max-width: 1240px) {
+  .photographe_page .page__contact {
+    margin-right: 40px;
+  }
 }
 
 @media screen and (max-width: 940px) {
@@ -622,7 +629,7 @@ header ul {
   bottom: 0px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 940px) {
   .lien_bas_page {
     display: none;
   }
@@ -635,7 +642,7 @@ header ul {
   bottom: 20px;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 940px) {
   .page__contact_portable {
     display: none;
   }
